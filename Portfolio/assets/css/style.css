@@ -1,0 +1,889 @@
+/* ==========================================================================
+GLOBAL SETTINGS
+========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    color: white;
+}
+
+.scroller-container .scroll-offset {
+    scroll-margin-top: 40px;
+}
+
+/* ==========================================================================
+IMPORT SECTION
+========================================================================== */
+
+
+/* ============================================================  Root  ====*/
+
+:root {
+    /* Fonts */
+    --font: 'Poppins', sans-serif;
+
+    /* Typography */
+    --lineHeight: 1.6;
+    --fontSize-base: 1rem;
+    --fontSize-h1: calc(var(--fontSize-base) * 2.488);
+    --fontSize-h2: calc(var(--fontSize-base) * 2.074);
+    --fontSize-h3: calc(var(--fontSize-base) * 1.728);
+    --fontSize-h4: calc(var(--fontSize-base) * 1.44);
+    --fontSize-h5: calc(var(--fontSize-base) * 1.2);
+    --fontSize-h6: var(--fontSize-base);
+
+
+    /* Colors */
+    --primaryColor1: #4bd1a0;
+    --primaryColor2: #a47551;
+    --altPrimaryColor1: #238863;
+    --backgroundColor1: #0b0f1b;
+    --keywordFont: #f0ac77;
+    --descriptionFont: rgb(150, 150, 150);
+
+
+    /* Spacing and Layout */
+    --standard-padding: 2em 4em;
+
+}
+
+/* ======================================================================= */
+
+/* ==========================================================================
+GENERAL STYLES
+========================================================================== */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Applied Typeography */
+body {
+    line-height: var(--lineHeight);
+    background-color: var(--backgroundColor1);
+}
+
+h1 {
+    font-size: var(--fontSize-h1);
+}
+
+h2 {
+    font-size: var(--fontSize-h2);
+}
+
+h3 {
+    font-size: var(--fontSize-h3);
+}
+
+h4 {
+    font-size: var(--fontSize-h4);
+}
+
+h5 {
+    font-size: var(--fontSize-h5);
+}
+
+h6 {
+    font-size: var(--fontSize-h6);
+}
+
+/* Padding */
+/* Larger screens: medium-sized devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+    :root {
+        --side-padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --side-padding: 2rem;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1400px) {
+    :root {
+        --side-padding: calc(50vw - 660px);
+    }
+}
+
+.section {
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+}
+
+.keyword {
+    color: var(--keywordFont);
+}
+
+/* ==========================================================================
+Section: Navigation Bar (Header)
+========================================================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    padding: 25px 50px;
+    background-color: var(--backgroundColor1);
+    transition: top 0.3s ease;
+
+    /* Shadow */
+    box-shadow: 0px 1px 25px 0px var(--primaryColor1);
+}
+
+.logo-tag {
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+}
+
+.dev-animated {
+    color: var(--primaryColor1);
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    width: 4em;
+    animation: typing 2s steps(25, end) forwards,
+        blink 0.5s step-end infinite,
+        floating 2s 1s ease-in-out infinite;
+    /* Starts after 2s delay */
+    margin-left: 5px;
+    margin-top: -3px;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 5px);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 4em;
+    }
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--primaryColor1);
+    }
+}
+
+#nav-link-container ul {
+    display: flex;
+    list-style-type: none;
+    gap: 25px;
+}
+
+#nav-link-container a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#nav-link-container a:hover {
+    color: var(--keywordFont);
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #nav-link-container ul {
+        flex-wrap: wrap;
+
+    }
+}
+
+
+/* ==========================================================================
+Page: Home Page
+========================================================================== */
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Ensures particles stay behind content */
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.home-page {
+    margin-top: 120px;
+}
+
+.double-box-conainer {
+    display: flex;
+    gap: 35px;
+}
+
+.page-box {
+    width: 100%;
+    height: calc(100vh - 196px);
+}
+
+.my-details-box img {
+    margin-top: -20px;
+    height: 400px;
+}
+
+.my-details-box h2 {
+    font-size: 1.5rem;
+    margin-top: -10px;
+    font-weight: 500;
+}
+
+.my-details-box p {
+    font-weight: 300;
+}
+
+.about-me-paragraph {
+    margin: 15px auto;
+    font-weight: 300;
+}
+
+.primary-actions {
+    display: flex;
+    align-items: center;
+}
+
+.primary-actions .primary-actions-button {
+    text-decoration: none;
+    color: var(--primaryColor1);
+    background-color: transparent;
+    padding: 7px 20px;
+    border: 2px solid var(--primaryColor1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.primary-actions .primary-actions-button:hover {
+    background-color: white;
+    box-shadow: 0 0 10px var(--primaryColor1);
+    color: black;
+    cursor: pointer;
+}
+
+.primary-actions .primary-actions-github img {
+    margin-top: 25px;
+    margin-left: 5px;
+    width: 45px;
+}
+
+.primary-actions .primary-actions-github img:hover {
+    background-color: white;
+    box-shadow: 0 0 10px var(--primaryColor1);
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+}
+
+
+/* MAIN CONTTENT */
+
+
+
+.scroller-container {
+    margin-top: -120px;
+    height: 110%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.inner-content {
+    padding-right: 50px;
+}
+
+.about-me-box {
+    padding-top: 120px;
+}
+
+/* Styling the scrollbar */
+.scroller-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroller-container::-webkit-scrollbar-track {
+    margin-top: 50px;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.scroller-container::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom, #dcb8a1, var(--keywordFont));
+    border-radius: 10px;
+}
+
+/* Optional: Style for hover effect on the scrollbar thumb */
+.scroller-container::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to bottom, #9f7759, #93724f);
+}
+
+.section-heading {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.work-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+}
+
+.work-box {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.work-date {
+    margin-top: 4.5px;
+    width: 220px;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.work-date img {
+    width: 90%;
+}
+
+.work-description-container {
+    width: 100%;
+}
+
+.project-action-buttons {
+    display: flex;
+    align-items: flex-start;
+}
+
+.project-action-buttons button {
+    color: var(--altPrimaryColor1);
+    background-color: transparent;
+    padding: 7px 20px;
+    border: 2px solid var(--altPrimaryColor1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.project-action-buttons button:hover {
+    color: #4bd1a0;
+    box-shadow: 0 0 10px var(--primaryColor1);
+    cursor: pointer;
+}
+
+.project-action-buttons button .button-link-indicator {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.project-action-buttons button:hover .button-link-indicator {
+    transform: scale(1.1) translate(3px, -3px);
+}
+
+.work-description-container h1 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.work-description-container p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--descriptionFont);
+    margin-bottom: 7px;
+}
+
+.work-box-container:hover .work-box {
+    opacity: 0.5;
+}
+
+/* Override the dim effect when the specific work box is hovered */
+.work-box-container .work-box:hover {
+    opacity: 1;
+    z-index: 1;
+    box-shadow: 0 0 10px var(--primaryColor1);
+}
+
+.work-box-container .work-box:hover .work-description-container h1,
+.work-box-container .work-box:hover .work-description-container .link-indicator {
+    color: var(--keywordFont);
+}
+
+.work-box-container .work-box:hover .project-description h1,
+.work-box-container .work-box:hover .project-description .link-indicator {
+    color: var(--primaryColor1);
+}
+
+.work-description h1 .link-indicator,
+.project-description h1 .link-indicator {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.work-box-container .work-box:hover .link-indicator {
+    transform: scale(1.1) translate(5px, -5px);
+}
+
+.work-tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tools {
+    background-color: var(--primaryColor2);
+    color: black;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.tools-green {
+    color: var(--primaryColor1);
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: 2px solid var(--primaryColor1);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.action-links {
+    text-decoration: none;
+
+}
+
+.action-links:hover,
+.action-links:hover .link-indicator-right {
+    color: var(--primaryColor1);
+}
+
+.link-indicator-right {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.action-links:hover .link-indicator-right {
+    transform: translateX(5px);
+}
+
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skills-box {
+    width: 450px;
+    border: 1px solid var(--keywordFont);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+
+}
+
+/* Left Box */
+.skills-box--subHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin-top: 10px;
+}
+
+.skills-box--subHeader h4 {
+    text-align: center;
+}
+
+.skills-boxes-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.skills-list {
+    margin-top: 20px;
+    width: 190px;
+    max-height: 150px;
+    overflow-y: scroll;
+
+    @media (max-width: 767px) {
+        /* Mobile View */
+        width: 80;
+    }
+}
+
+/* Custom Scrollbar */
+.skills-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+.skills-list::-webkit-scrollbar-track {
+    background: #dbdbdb;
+    border-radius: 4px;
+}
+
+.skills-list::-webkit-scrollbar-thumb {
+    background: #40b389;
+    border-radius: 4px;
+}
+
+.skills-list::-webkit-scrollbar-thumb:hover {
+    background: #4bd1a0;
+}
+
+/* Generic Box */
+.skills-box h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.skills-box ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.generic-skill-list {
+    margin-top: 20px;
+}
+
+.generic-skill-list li {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.50);
+    font-style: italic;
+    margin-top: 55px;
+    margin-left: 35px;
+}
+
+
+
+/* Tablet */
+@media (max-width: 1070px) {
+
+    .home-page {
+        margin-bottom: 180px;
+    }
+
+    .double-box-conainer {
+        flex-wrap: wrap;
+    }
+
+    .scroller-container {
+        height: 120%;
+        margin-top: 0px;
+    }
+
+    .skills-container {
+        width: 100%;
+    }
+
+    .skills-box {
+        width: 90%;
+        height: 320px;
+    }
+
+    .skills-box--subHeader {
+        justify-content: space-around;
+    }
+
+
+
+
+}
+
+
+/* ==========================================================================
+Page: More Info
+========================================================================== */
+
+#backButton,
+.back-top-button {
+    text-decoration: none;
+    color: var(--primaryColor1);
+    background-color: transparent;
+    padding: 7px 20px;
+    border: 2px solid var(--primaryColor1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+#backButton:hover,
+.back-top-button:hover {
+    background-color: white;
+    box-shadow: 0 0 10px var(--primaryColor1);
+    color: black;
+    cursor: pointer;
+}
+
+.project-describer-container h1 {
+    font-size: 4rem;
+}
+
+.project-describer-container p {
+    font-weight: 100;
+}
+
+.key-features {
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.key-features h2 {
+    margin-bottom: 18px;
+}
+
+.key-features ul {
+    margin-left: 30px;
+}
+
+.key-features ul li {
+    font-weight: 100;
+    margin-bottom: 6px;
+}
+
+.project-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.project-tag {
+    background-color: rgba(121, 121, 121, 0.465);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-images-container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.project-images-container img {
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.project-image-double {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-image-double img {
+    width: 45%;
+}
+
+.alt-footer {
+    text-align: center;
+    font-style: normal;
+    font-weight: 100;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+/* Style the modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Style the modal content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+Page: Project Archive
+========================================================================== */
+
+.projects-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.projects-table th,
+.projects-table td {
+    text-align: left;
+    padding: 12px;
+    padding-right: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.projects-table td:nth-child(1) {
+    width: 150px;
+}
+
+.projects-table td:nth-child(1) img {
+    width: 90%;
+}
+
+.projects-table td:nth-child(2) {
+    width: 160px;
+}
+
+.projects-table td:nth-child(3) {
+    width: 400px;
+}
+
+.action-link:hover,
+.action-link:hover .action-link-indicator {
+    color: var(--primaryColor1);
+}
+
+.action-link-indicator {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    /* Adjusted margins for a better alignment, consider reducing if too large */
+    margin-top: 5px;
+    /* Adjust if necessary */
+    margin-right: 5px;
+    /* Adjust if necessary */
+}
+
+.action-link:hover .action-link-indicator {
+    transform: translate(5px, -5px);
+    /* Moves the arrow up and to the right */
+}
+
+
+
+/* Tablet */
+@media (max-width: 840px) {
+
+    .projects-table th:nth-child(1),
+    .projects-table td:nth-child(1),
+    .projects-table th:nth-child(3),
+    .projects-table td:nth-child(3) {
+        display: none;
+    }
+
+    .projects-table .project-action-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+
+/* ======================================================================= */

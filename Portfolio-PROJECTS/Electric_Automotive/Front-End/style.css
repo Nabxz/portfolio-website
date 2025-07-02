@@ -1,0 +1,1733 @@
+/* IMPORTED FONTS */
+    /* Roboto */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;1,200&family=Roboto:wght@100;400;500&display=swap');
+
+
+:root {
+    /* Fonts */
+    --font: 'Roboto', sans-serif;
+
+
+    /* Typeography */
+    --lineHeight: 1.5;
+    --fontSize-h1: 3rem;
+    --fontSize-h2: 2rem;
+    --fontSize-h3: 1.25rem;
+    --fontSize-h3_4: 1.09rem;
+    --fontSize-h4: 1rem;
+
+
+    /* Colors */
+    --backgroundColor: white;
+    --accentColor01: #3974ff;
+    --footerColor01: #dfdfdf;
+
+    /* Screen Sizes - Responsive Padding  */
+    /* Mobile */ --padding: 2em 4em;
+    /* Tablet */ @media (min-width: 400px) { --padding: 4em 4em; }
+    /* Desktop */ @media (min-width: 768px) { --padding: 4em 8em; }
+    /* Wide Screen */ @media (min-width: 2000px) { --padding: 4em 17em; }
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+/* GENERAL STYLES */    
+/* Smooth Scrolling */
+html { scroll-behavior: smooth; }
+
+h1 {
+    font-size: var(--fontSize-h1);
+}
+h2 {
+    font-size: var(--fontSize-h2);
+}
+h3 {
+    font-size: var(--fontSize-h3);
+}
+h4 {
+    font-size: var(--fontSize-h4);
+}
+
+body {
+    line-height: var(--lineHeight);
+}
+
+
+
+/* <!--Introductory Header--> For Each Section */
+/* Global Styles */
+.sectionHeading {
+    margin: 2rem;
+    text-align: center;
+}
+.sectionHeading p {
+    font-weight: 400;
+}
+.sectionHeading h1 {
+    font-weight: 400;
+    font-size: 2.3rem;
+    /* Mobile */ @media (max-width: 767px) {
+        font-size: 2rem;
+    }
+    
+}
+
+/* Responsive Padding */
+.section {
+    padding: var(--padding);
+}
+
+
+
+/* NAV BAR */
+header {
+    z-index: 1;
+    position: relative;
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+
+    /* Mobile */ @media (max-width: 1199px) {
+        background-color: black;
+    }
+}
+header .top-section {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.3rem;
+}
+.logo-title a {
+    color: white;
+    text-decoration: none;
+}
+.logo-title a:hover {
+    font-weight: normal;
+}
+.logo-title {
+    font-weight: 100;
+    margin-right: 1.5rem;
+}
+.nav-links {
+    display: flex; /* Adding flex here */
+    flex-wrap: nowrap; /* Prevents the items from wrapping into the next line */
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.nav-icons {
+    margin-left: auto;
+}
+.nav-icons img {
+    cursor: pointer;
+}
+.nav-icons button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.nav-icons a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+header .line {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.8px;
+    width: 99.9%;
+    background-color: white;
+}
+.bottom-section {
+    padding-top: 0.5rem;
+    font-weight: 100;
+}
+/* Mobile view */
+@media (max-width: 1199px) {
+    header .top-section {
+        flex-direction: column; /* Stack vertically */
+    }
+    .nav-links {
+        margin-top: 10px;
+        justify-content: space-around; /* Space items equally */
+    }
+    .nav-icons {
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+/* LANDING PAGE */
+.videoContent {
+    /* Desktop */ @media (min-width: 1199px) { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.video-image-banner {
+    /* Desktop */ @media (min-width: 1199px) { 
+        background-color: black;
+        margin-top: -7.3%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        z-index: 0;  
+    }
+    
+}
+#bannerVideo, #bannerImage {
+    object-fit: cover;  /* or use object-fit: cover; if you want to fill the screen */
+    width: 100%;
+    height: 100%;
+}
+
+/* Text On Banner */
+.textOnBanner {
+    color: white;
+    z-index: 1;
+
+    /* Desktop */ @media (min-width: 1199px) { 
+        position: absolute; 
+        text-align: right;
+        bottom: 35%;
+        right: 3%
+        
+    }
+
+    /* Desktop */ @media (min-width: 2000px) { 
+        position: absolute; 
+        text-align: right;
+        bottom: 20%;
+        right: 5%;
+    }
+
+    /* Mobile */ @media (max-width: 1199px) {
+        position: relative;
+        padding-left: 1em;
+        background-color: black;
+        
+    }
+
+}
+.textOnBanner h3 {
+    margin-right: 0.1rem;
+    font-size: 1.9rem;
+    font-weight: 400;
+
+    /* Mobile */ @media (max-width: 767px) {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+}
+.textOnBanner h2 {
+    margin-top: -1rem;
+    font-size: 3.5rem;
+    font-weight: 420;
+
+    /* Mobile */ @media (max-width: 767px) {
+        font-size: 2.5rem;
+    }
+    /* Mobile */ @media (max-width: 400px) {
+        margin-top: -0.8rem;
+        font-size: 2rem;
+    }
+}
+.textOnBanner p {
+    margin-right: 0.1rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+
+    /* Mobile */ @media (max-width: 1000px) {
+        margin-top: -10px;
+        font-size: 1.3rem;
+    }
+    /* Mobile */ @media (max-width: 400px) {
+        margin-top: 0.2rem;
+        font-size: 1.1rem;
+    }
+}
+#replayVideo {
+    cursor: pointer;
+}
+#replayVideo:hover {
+    font-weight: normal;
+}
+
+
+/* Fade Transisition */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-out {
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+
+/* FIND YOUR ELECTRIC CAR PAGE */
+.findyourcar-page .sectionHeading {
+    /* Mobile */ @media (max-width: 767px) {
+        margin-top: -80%;
+    }
+    /* Tablet */ @media (min-width: 767px) and (max-width: 900px) {
+        margin-top: -80%;
+    }
+    /* Tablet */ @media (min-width: 900px) and (max-width: 1199px) {
+        margin-top: -75%;
+    }
+    /* PC */ @media (min-width: 1199px) {
+        margin-top: -10%;
+    }
+
+}
+
+.content {
+    /* PC */ @media (min-width: 1199px) {
+        display: flex;
+    }
+}
+
+.content .image-carousel {
+    margin-right: auto;
+    margin-left: auto;
+}
+.content .image-carousel img {
+    /* PC */ @media (min-width: 1199px) {
+        width: 750px;
+        height: auto;
+    }
+    /* Mobile */ @media (max-width: 1199px) {
+        width: 80vw;
+        height: auto;
+    }
+
+}
+.findyourcar-page .functional {
+    /* PC */ @media (min-width: 1199px) {
+        margin-top: auto;
+        margin-left: 20%;
+        margin-bottom: 60px;
+        text-align: right;
+    }
+
+    /* PC */ @media (min-width: 3000px) {
+        margin-left: -10%;
+        margin-right: 30%;
+    }
+
+    /* Mobile */ @media (max-width: 1199px) {
+        text-align: center;
+        margin-top: 70px;
+    }
+}
+
+/* Functional */
+.functional .name {
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+}
+.functional .sub-name {
+    font-size: clamp(1.2rem, 1.3vw, 1.6rem);
+}
+.functional .horse-power {
+    font-size: clamp(1rem, 1vw, 1.3rem);
+}
+.functional .speed {
+    font-size: clamp(1rem, 1vw, 1.3rem);
+}
+.functional .viewLink {
+    font-size: clamp(1rem, 1vw, 1.3rem);
+}
+/* Buttons */
+.functional .buttons {
+    margin-top: 50px;
+}
+.functional .buttons .inner-line {
+    display: none;
+}
+
+/* Removing Button Style */
+.functional .buttons button {
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px 10px;
+}
+.functional .buttons .line {
+    height: 5px;
+    width: calc(100% + 6px);
+    margin-left: -22px;
+    background-color: black;
+}
+.functional .buttons .inner-line {
+    height: 7px;
+    width: calc(100% + 15px);
+    background-color: var(--accentColor01);
+    margin-left: -5px;
+    margin-bottom: -8px;
+    z-index: 1;
+}
+
+
+
+/* ELECTRIC HUB */
+.blogs-container {
+    /* WIDE-PC */ @media (min-width: 3000px) {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+.blog-1, .blog-2 {
+    /* PC */ @media (min-width: 1199px) {
+        display: flex;
+    }
+    height: 100%; 
+}
+.blog-2 {
+    margin-top: 7%;
+    flex-direction: row-reverse;
+}
+.blog-1 img, .blog-2 img {
+    width: 70%;
+    max-width: 900px;
+    height: auto;
+    
+    /* Mobile */ @media (max-width: 1199px) {
+        height: 100%;
+        width: 100%;
+    }
+}
+.blog-1 .information {
+    padding-top: 2%;
+    padding-left: 2%;
+}
+.blog-2 .information {
+    padding-top: 2%;
+    padding-right: 2%;
+    width: 100%;
+}
+/* Details */
+.information .date {
+    font-size: clamp(1rem, 1vw, 1.1rem);
+
+    /* Tablet */ @media (min-width: 767px) {
+        margin-bottom: -8px;
+    }
+    
+}
+.information .blogName h3 {
+    font-weight: normal;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+}
+.information .summary {
+    font-size: clamp(1rem, 1.15vw, 1.4rem);
+}
+.information button {
+    background-color: #ffffff00;
+    max-width: 160px;
+    width: 100%;
+    height: 43px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    /* PC */ @media (min-width: 1199px) {
+        margin-top: 25%;
+    }
+    /* Mobile */ @media (max-width: 1199px) {
+        margin-top: 30px;
+    }
+}
+.information button:hover {
+    color: white;
+    transform: scale(1.1);
+    background-color: var(--accentColor01);
+}
+
+.electrichub-Page .seeAllButton {
+    text-decoration: none;
+    display: grid;
+    justify-items: center;
+    margin-top: 5%;
+    @media (max-width: 767px) { /* Phone Wide */
+        margin-top: 100px;
+    }
+}
+.electrichub-Page .seeAllButton button {
+    color: white;
+    background-color: black;
+    max-width: 200px;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.electrichub-Page .seeAllButton button:hover {
+    background-color: var(--accentColor01);
+    transform: scale(1.1); 
+}
+
+
+
+/* FAQ */
+.faq-content {
+    /* Tablet */ @media (min-width: 1300px) {
+        display: flex;
+    }
+}
+.faq-content .left-side {
+    padding-right: 250px;
+}
+.faq-questions-container {
+    /* Phone */ @media (max-width: 1000px) {
+        margin-top: 20%;
+    }
+    /* Phone */ @media (max-width: 1300px) {
+        margin-top: 10%;
+    }
+}
+.faq-content .left-side h1{
+    /* Phone */ @media (max-width: 1600px) {
+        width: 10px;
+    }
+    /* Tablet */ @media (min-width: 2000px) and (max-width: 3000px) {
+        width: 500px;
+    }
+    margin-bottom: 5%;
+}
+.faq-questions-container {
+    flex-grow: 1;
+}
+.faq-line {
+    height: 1px;
+    background: #ccc;
+    margin: 15px 0;
+}
+
+.faq-question h5 {
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.faq-answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s, max-height 0.3s;
+    margin-top: 10px;
+}
+
+.faq-question.active .faq-answer {
+    opacity: 1;
+    max-height: 1000px;
+}
+
+.toggle {
+    margin-left: 10px;
+}
+
+
+.footer-prelude {
+    padding-bottom: 0;
+    
+}
+.footer-prelude .line {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.8px;
+    width: 99.9%;
+    background-color: black;
+}
+.footer-prelude .links {
+    /* Phone */ @media (max-width: 1000px) {
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1.2% 3%;
+}
+.footer-prelude a {
+    margin-right: 3%;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+.footer-prelude a:hover {
+    color: var(--accentColor01);
+}
+
+
+
+.footer-section {
+    padding: 3rem 1rem;
+    /* PC */ @media (min-width: 767px) {
+        padding: var(--padding);
+    }
+}
+footer {
+    background-color: var(--footerColor01);
+}
+
+/* Footer Info Section */
+footer .info-container {
+    display: flex;
+    justify-content: flex-start;
+}
+footer .info-section {
+    flex-grow: 1; 
+}
+footer .info-heading-name h5 {
+    font-size: medium;
+    font-weight: normal;
+    margin-bottom: 25px;
+
+    /* PC */ @media (min-width: 767px) {
+        letter-spacing: 2px;
+    }
+}
+
+footer .info-section .footer-links a {
+    width: 100px;
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+footer .info-section .footer-links a:hover {
+    color: var(--accentColor01);
+    transform: scale(1.1);
+    transform: translate(-10%, -10%);
+}
+footer .newsLetter {
+    margin-top: 50px;
+}
+footer .newsLetter h5 {
+    font-size: medium;
+    font-weight: 500;
+}
+footer .newsLetter p {
+    margin-bottom: 15px;
+}
+.newsLetter {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px 0; 
+}
+.newsLetter #feedbackMessage {
+    margin-bottom: 10px;
+}
+
+.email-box {
+    display: flex;
+    align-items: center; 
+}
+
+.email-box input {
+    flex: 1;
+    padding: 10px;
+    border: 2.5px solid black;
+    font-size: 16px; 
+    border-radius: 0;
+}
+.email-box input:focus {
+    outline: none; 
+    border-color: var(--accentColor01);
+    border-radius: 0; 
+}
+
+.email-box button {
+    padding: 11.5px 20px;
+    border: 2.5px solid black;
+    background-color: #ffffff00; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.email-box button:hover {
+    color: #ffffff; 
+    background-color: var(--accentColor01);
+}
+
+footer .social-media-links {
+    margin-bottom: 10px;
+}
+footer .social-media-links a {
+    text-decoration: none;
+    margin-right: 2.5%;
+}
+footer .social-media-links button {
+    border: none;
+    background-color: #ffffff00;
+    transition: transform 0.2s ease;
+}
+footer .social-media-links button:hover {
+    border: none;
+    background-color: #ffffff00;
+
+    transform: scale(1.1);
+    transform: translate(-10%, -10%);
+}
+footer .social-media-links img {
+    width: 24px; 
+    height: 24px;
+    cursor: pointer;
+}
+
+
+/* Supporting Pages Exclusive */
+#support-page-header {
+    color: black;
+    background-color: white;
+}
+#support-page-header .logo-title a {
+    color: black;
+}
+#support-page-header .nav-links a {
+    color: black;
+}
+#support-page-header .line {
+    background-color: black;
+}
+.supporting-page-intro .sub-header {
+    font-size: medium;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+/* CONTACT US PAGE */
+/* ------------------------------------------------- */
+.contact-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 1800px;
+    padding: 10px;
+    border: 2.5px solid black;
+    font-size: 16px;
+    border-radius: 0;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accentColor01);
+    border-radius: 0;
+}
+
+.contact-form-box {
+    display: flex;
+    align-items: center;
+}
+
+.contact-form-box input {
+    flex: 1;
+    padding: 10px;
+    border: 2.5px solid black;
+    font-size: 16px; 
+    border-radius: 0;
+    max-width: 1800px;
+}
+.contact-form-box input:focus {
+    outline: none; 
+    border-color: var(--accentColor01);
+    border-radius: 0; 
+}
+
+.submit-button {
+    padding: 11.5px 20px;
+    border: 2.5px solid black;
+    background-color: #ffffff00;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: max-content;
+    margin: 10px 0;
+    margin-left: auto;
+}
+
+.submit-button:hover {
+    color: #ffffff;
+    background-color: var(--accentColor01);
+}
+#responseMessage {
+    font-weight: medium;
+    transition: opacity 0.3s;
+}
+
+
+
+
+
+/* BLOG PAGE */
+/* ------------------------------------------------- */
+.blog-post-search {
+    position: relative;
+    max-width: 425px;
+    margin-left: auto;
+}
+
+/* Search bar on top right */
+.blog-post-search input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Make room for the search icon on the right */
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Rounded edges for the input */
+}
+
+.blog-post-search img {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;  
+    height: 20px; /* And this one too */
+    pointer-events: none; /* Ensure clicks on the icon don't interfere with input interaction */
+}
+
+/* Style for the tags */
+/* This is the style for the active/checked tag */
+.blog-tags-container input[type="radio"]:checked + .blog-fetch-tag {
+    background-color: var(--accentColor01); 
+    color: #ffffff;
+}
+
+.blog-tags-container {
+    display: flex;
+    gap: 10px; /* Space between each tag */
+    margin: 20px 0;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.blog-fetch-tag {
+    background-color: #e9e9e9;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;  /* To allow for padding, etc. */
+}
+
+.blog-fetch-tag:hover {
+    color: white;
+    background-color: var(--accentColor01);
+}
+
+
+.blog-section {
+    display: flex;
+    flex-wrap: wrap;  /* Allow the items to wrap to the next line when there's not enough space */
+    justify-content: flex-start;
+    gap: 20px; /* Space between each box */
+    border: 1px solid black;
+    border-radius: 10px; 
+    padding: 20px 40px;
+}
+
+
+/* Style for the blog posts */
+.blog-post-box {
+    @media (min-width: 1100px) {
+        flex-basis: calc(33.333% - 20px);
+        width: calc(33.333% - 20px);
+        max-width: 440px;  /* Setting a max-width to prevent it from becoming too wide on larger screens */
+    }
+
+    
+    border: 1px solid #e9e9e9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    overflow: hidden; 
+    
+    opacity: 0;
+    transition: all 0.5s ease-in-out; 
+    
+
+    @media (max-width: 1100px) {  /* Adjust 768px based on when you want the change to happen */
+        .blog-post-box {
+            width: 100%;
+        }
+    }
+}
+
+.blog-post-box.new, 
+.blog-post-box.trending,
+.blog-post-box.tesla,
+.blog-post-box.bmw,
+.blog-post-box.mercedes,
+.blog-post-box.lamborghini{
+    opacity: 1;
+}
+
+.blog-post-box img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+
+    transition: transform 0.1s ease-in-out; 
+    will-change: transform;
+}
+
+.blog-post-box:hover img {
+    transform: skewX(5deg) skewY(5deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.display-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.display-tags p {
+    
+    background-color: #e9e9e9;
+    border-radius: 20px; /* Rounded edges for the display tags within the blog post */
+    padding: 5px 15px;
+}
+
+.blog-title {
+    margin-top: 15px;
+}
+.blog-summary {
+    margin-bottom: 15px;
+}
+
+.blog-post-box a button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.blog-post-box a button:hover {
+    background-color: var(--accentColor01);
+}
+
+
+
+/* ACTUAL BLOG POST CONTENT */
+.blog-content-intro {
+    display: flex;
+    
+}
+
+.blog-content-info {
+    padding: 15px;
+}
+.top-back-to-blog-page {
+    margin-left: auto;
+    margin-right: 25px;
+}
+.top-back-to-blog-page button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+}
+.top-back-to-blog-page button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: var(--accentColor01);
+    color: white;
+
+    transform: scale(1.05);
+}
+
+.blog-content {
+    max-width: 1800px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+}
+.blog-content p b {
+    font-size: x-large;
+}
+.blog-content p b:hover {
+    color: var(--accentColor01);
+}
+
+.first-blog-content-image-frame {
+    padding-bottom: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.first-blog-content-image-frame iframe {
+    width: 100%;
+    height: 650px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.first-blog-content-image {
+    padding-bottom: 40px;
+}
+.blog-content-image {
+    padding: 40px;
+}
+.blog-content-paragraph {
+    padding-bottom: 30px;
+}
+.blog-content img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+}
+
+.subscribe-newsletter-card {
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px 40px;
+    max-width: 1800px;
+}
+.subscribe-newsletter-card .card-heading-text {
+    margin-bottom: 20px;
+}
+
+
+.back-to-blog-page {
+    display: flex;
+    padding: 50px;
+    max-width: 1800px;
+}
+
+.back-to-blog-page a {
+    margin-left: auto;
+}
+
+.back-to-blog-page button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.back-to-blog-page button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: var(--accentColor01);
+    color: white;
+
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) { /* adjust breakpoint as needed */
+    .blog-content-container {
+        padding: 0;
+    }
+    .blog-content {
+        border: none;
+        box-shadow: none;
+    }
+
+    .first-blog-content-image-frame,  .first-blog-content-image, .blog-content-image{
+        padding: 0px;
+    }
+
+    .first-blog-content-image-frame iframe {
+        height: 100%;
+    }
+
+    .subscribe-newsletter-card {
+        margin-top: 50px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 20px 10px;
+       
+    }
+}
+
+
+
+/* BUY NOW - MODELS PAGE */
+/* Box 1 */
+.buy-now-search-section h5, .buy-now-by-brand-section h5 {
+    font-size: xx-large;
+    margin-top: 0;
+}
+
+.buy-now-search-section p, .buy-now-by-brand-section p {
+    font-size: x-large;
+    margin-bottom: 30px;
+}
+
+.buy-now-search-section .buy-now-input, 
+.buy-now-search-section .buy-now-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    border: 1px solid black;
+    background: transparent;
+
+    font-size: 16px;
+}
+
+.buy-now-search-section .buy-now-input:focus,
+.buy-now-search-section .buy-now-input:focus {
+    border-color: var(--accentColor01);
+}
+
+.buy-now-search-section button {
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+}
+
+.buy-now-search-section button:hover {
+    background-color: var(--accentColor01);
+    color: white;
+    transform: scale(1.1);
+}
+
+#result {
+    color: red;
+    margin-top: 20px;
+}
+
+.dealership-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.dealership-button:hover {
+    background-color: #555;
+}
+
+/* Car Result */
+.car-card {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgb(38, 38, 38);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+    transform: scale(1.01);
+}
+
+.car-card h6 {
+    font-size: large;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    font-size: small;
+    margin: 5px 0;
+}
+
+
+/* Box 2 */
+.buy-now-by-brand-section p {
+    font-size: large;
+}
+.buy-now-by-brand-section {
+    max-width: 1800px;
+}
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+}
+.brands img {
+    height: 100px;
+    margin: 20px;
+    margin-top: 50px;
+    margin-right: 30px;
+    
+
+}
+.brands a {
+    transition: transform 0.3s ease;
+}
+.brands a:hover {
+    transform: scale(1.2);
+}
+
+
+/* BUY CAR SPECIAL PROMO */
+.buy-car-special-promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px; /* Adds more space to the left */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Left Side */
+.container {
+    width: 80%;
+    margin: 50px auto;
+    margin-left: 10px;
+    background-color: #fff;
+    padding: 50px;
+    
+}
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.vehicle-price {
+    text-align: center;
+    flex-basis: 40%;
+}
+
+.vehicle-price span {
+    display: block;
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.options {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lease, .finance {
+    width: 45%;
+    text-align: center;
+}
+@media (min-width: 1120px) and (max-width: 1385px) {
+    .lease, .finance {
+        margin-top: 40px;
+    }
+}
+
+
+.lease span, .finance span {
+    display: block;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.buy-car-special-promo a {
+    text-decoration: none;
+}
+.dealer-btn {
+    display: block;
+    margin: 40px auto 0;
+    padding: 15px 30px;
+    background-color: var(--accentColor01);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    font-size: large;
+}
+
+.dealer-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Right Side */
+.promo-left-side {
+    flex: 0.7; /* Adjust this to your liking to control the width of the left side */
+}
+.promo-right-side {
+    flex: 0.3; /* Adjust this to your liking to control the width of the right side */
+    display: flex;
+    margin-top: auto;
+    justify-content: flex-end; /* Pushes the car image to the right */
+    align-items: flex-end; /* Pushes the car image to the bottom */
+    padding-bottom: 50px; /* Adds space at the bottom */
+}
+
+.promo-right-side img {
+    max-width: 100%; /* Ensures the car image doesn't overflow its container */
+}
+
+/* Mobile devices and tablets */
+@media (max-width: 1199px) {
+    .buy-car-special-promo {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .container {
+        width: 100%;
+        margin: 20px 0;
+        padding: 50px;
+    }
+
+    .pricing {
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .vehicle-price {
+        margin-bottom: 20px;
+    }
+
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lease, .finance {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .promo-left-side, .promo-right-side {
+        flex: 1;
+        padding: 0;
+    }
+
+    .promo-right-side img {
+        width: 100%;
+        height: auto;
+    }
+
+    .dealer-btn {
+        margin: 0 auto 0;
+        margin-top: 50px;
+        margin-bottom: -100px;
+    }
+}
+
+
+
+/* SIGN - IN */
+.login-container, .signup-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+}
+.sign-up-parent-container {
+    width: 33%;
+}
+
+.login-container {
+    width: 57%;
+}
+
+
+.login-logo, .login-form p, .cta, .trust-note {
+    text-align: center;
+    margin-bottom: 15px;  /* Uniform margin for these elements */
+}
+
+.login-form h2, .signup-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;  /* Uniform margin for these elements */
+}
+
+.login-form input, .signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;  /* Uniform margin for these elements */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#rememberMe {
+    width: auto;
+    padding: 0;
+    margin-top: 10px;
+
+}
+#rememberMe, .remember-forgot label {
+    @media (max-width: 700px) {
+        margin-right: 20px;
+    }
+}
+
+.remember-forgot {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.login-form button, .signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;  /* You can use your brand color here */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.signup-form button {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.login-form button:hover, .signup-form button:hover {
+    background-color: var(--accentColor01);  /* A darker shade of your brand color for the hover effect */
+}
+
+.cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.trust-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+}
+.sign-up-trust-note  {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+
+.sign-in-and-sign-up-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;  /* Adds spacing between flex items */
+}
+
+.vertical-line {
+    height: 500px; 
+    width: 1.8px; 
+    background-color: black;
+}
+
+.error-message {
+    margin-top: 20px;
+    color: red;
+}
+.success-message {
+    margin-top: 20px;
+    color: green;
+}
+.demo-account {
+    padding: 25px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) { /* adjust breakpoint as needed */
+    .sign-in-and-sign-up-container {
+        flex-direction: column; 
+        align-items: stretch; 
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .sign-up-parent-container, .login-container {
+        width: 100%;
+    }
+
+    .login-container {
+        margin-bottom: 20px; /* adds some space between the two containers on smaller screens */
+    }
+}
+
+
+
+
+/* USER ACCOUNT - PROFILE */
+#userDashboard, #notifications, #quickAccess, #promotions, #shortcuts, #helpSupport, #feedback {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-account-div a {
+    color: var(--accentColor01);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.user-account-div a:hover {
+    color: #0056b3;
+}
+
+.user-account-div button#logoutButton {
+    background-color: #ff4b5c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.user-account-div button#logoutButton:hover {
+    background-color: #e43446;
+}
+
+#messages {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+#messages.active {
+    padding: 10px;
+    max-height: 1000px;  
+    opacity: 1;
+}
+
+#messages p {
+    transition: transform 0.3s ease;
+}
+
+#messages p:hover {
+    transform: scale(1.01) translateY(-5px);
+}
+
+.editForm {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+    
+}
+
+.editForm.active {
+    padding: 10px 0;
+    max-height: 1000px;
+    opacity: 1;
+}
+#editOptions {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+#editOptions.active {
+    max-height: 150px; 
+    opacity: 1;
+    padding: 2px;
+    margin-left: 8px;
+}
+
+#changeUsername input, #changeEmail input, #changePassword input {
+    margin-top: 8px;
+    margin-bottom: 10px; 
+    width: 100%;
+    padding: 10px;
+    
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#changeUsername button, #changeEmail button, #changePassword button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+}
+#changeUsername button:hover, #changeEmail button:hover, #changePassword button:hover {
+    background-color: var(--accentColor01);
+    color: white;
+}
+
+
+/* PURCHASE HISTORY */
+.purchase-history-container {
+    border: 1px solid black;
+    border-radius: 10px; 
+    padding: 20px 40px;
+    text-align: center;
+}
+
+
+
+
+/* FIND A DEALERSHIP */
+.map-container {
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 10px; 
+    padding: 20px 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#location-input {
+    margin-top: 8px;
+    margin-bottom: 8px; 
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search-button, #reset-button {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: var(--accentColor01);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover, #reset-button:hover {
+    background-color: #003e81;
+}
+
+#map {
+    width: 100%; 
+    height: 530px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.leaflet-popup-tip {
+    background-color: #ffffff;
+}
+
+.leaflet-popup-content {
+    font-size: 14px;
+    color: #333;
+    margin: 8px 12px;
+}
+
+.dealership-name {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.map-container form {
+    margin: 50px;
+
+}
+.map-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.map-container input[type="text"],
+.map-container input[type="submit"], .map-container input[type="tel"], .map-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.map-container input[type="submit"] {
+    margin-top: 25px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.map-container input[type="submit"]:hover {
+    background-color: var(--accentColor01);
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Account</title>
+
+        <!--Favicon-->
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+        <link rel="manifest" href="./favicon/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!--Link To CSS-->
+        <link rel="stylesheet" href="style.css">
+
+        <!--Connecting To Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    </head>
+
+    <body>
+
+        <!--Nav Bar-->
+        <header id="support-page-header">
+            
+            <div class="top-section" >
+                
+                <div class="logo-title">
+                    <a href="./index.html">
+                        <p>Electric AutoMotive</p>
+                    </a>
+                </div>
+
+                <div class="nav-links">
+                    <a href="./index.html#electric-hub">Electric Hub</a>
+                    <a href="./buy-now-page.html">Buy Now - Models</a>
+                </div>
+
+                <div class="nav-icons">
+
+                    <!--Sign In-->
+                    <a href="./sign-in-page.html">
+                        <button>
+                            <img src="./images/user-icon.png" width="30" height="30">
+                        </button>
+                    </a>
+
+                    <!--Find Dealership-->
+                    <a href="./find-dealership-page.html">
+                        <button>
+                            <img src="./images/dealership-icon.png" width="30" height="30">
+                        </button>
+                    </a>
+
+                </div> <!--End of nav-icons-->
+
+            </div> <!--End of top-section-->
+
+            <div class="line"></div>
+
+            <div class="bottom-section">
+                <p>A New Chapter in Motion: Purely Electric.</p>
+            </div>
+     
+        </header>
+
+
+        <div class="section">
+            <div class="user-account-div">
+
+                <!-- Welcome Message -->
+                <h1>Welcome back, <span id="userName">[User's Name]</span>!</h1>
+
+                <!-- User Dashboard or Profile Section -->
+                <div id="userDashboard">
+                    <h2>Your Dashboard</h2>
+                    <p>Email: <span id="userEmail"></span></p>
+                    <br>
+
+                    <p><a href="#" id="editProfileToggle">Edit Profile</a></p>
+                    <div id="editOptions">
+                        <ul>
+                            <li><a href="#" class="editToggle" data-target="changeUsername">Change Username</a></li>
+                            <li><a href="#" class="editToggle" data-target="changeEmail">Change Email</a></li>
+                            <li><a href="#" class="editToggle" data-target="changePassword">Change Password</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="changeUsername" class="editForm">
+                        <!-- First Name -->
+                        <label for="newFirstName">Change User Name:</label>
+                        <input type="text" id="newFirstName" placeholder="First Name">
+                        
+                        <!-- Last Name -->
+                        <input type="text" id="newLastName" placeholder="Last Name">
+
+                        <button>Update</button>
+                    </div>
+                    
+                    <div id="changeEmail" class="editForm">
+                        <label for="newEmail">New Email:</label>
+                        <input type="text" id="newEmail">
+                        <button>Update</button>
+                    </div>
+                    
+                    <div id="changePassword" class="editForm">
+                        <label for="oldPassword">Current Password:</label>
+                        <input type="password" id="oldPassword">
+                        <label for="newPassword">New Password:</label>
+                        <input type="password" id="newPassword">
+                        <button>Update</button>
+                    </div>
+
+                    <p><a href="./user-purchase-history.html">Purchase History</a></p>
+                </div>
+
+                <!-- Notifications -->
+                <div id="notifications">
+                    <h2>Notifications</h2>
+                    <p>You have 3 new messages.  <a href="#" id="viewToggle">View</a></p>
+
+                    <div id="messages">
+                        <br>
+                        <p>• Welcome to the team! We're thrilled to have you aboard.</p>
+                        <p>• Did you know? Electric cars have zero tailpipe emissions.</p>
+                        <p>• Stay updated! Our new range of electric cars is launching soon.</p>
+                    </div>
+                </div>
+
+                <!-- Quick Access and Recommendations -->
+                <div id="quickAccess">
+                    <h2>Quick Access</h2>
+                    <p><a href="./blog-page.html">Visit The Electric Hub</a></p>
+                    <p><a href="./find-dealership-page.html">Book Service Appointment</a></p>
+                    <!-- ... other links ... -->
+                </div>
+
+                <!-- Current Offers or Promotions -->
+                <div id="promotions">
+                    <h2>Current Offers</h2>
+                    <p>Discover the unparalleled <a href="./Cars For Sale/lamborghini-lanzador.html">Electric Lamborghini Lanzardor</a></p>
+                    <p>Experience the innovative <a href="./Cars For Sale/mercedes-eqa.html">Electric Mercedes EQA</a></p>
+                    <p>Dive into the cutting-edge <a href="./Cars For Sale/tesla-model-s.html">Tesla Model S</a></p>
+                    <p>Unveiling the exquisite <a href="./Cars For Sale/bmw-elysium.html">BMW Elysium</a></p>
+                    
+                    <!-- ... other promotions ... -->
+                </div>
+
+                <div id="helpSupport">
+                    <p>Need help? <a href="./contact-us-page.html">Contact Support</a></p>
+                </div>
+
+                <div id="feedback">
+                    <p>Help us improve! <a href="./contact-us-page.html">Give Feedback</a></p>
+                </div>
+
+                <!-- Logout Button -->
+                <button id="logoutButton">Logout</button>
+
+            </div> <!--End of user account div-->
+        </div> <!--End of section-->
+        
+
+
+        <div class="footer-prelude section">
+
+            <div class="line"></div>
+
+            <div class="links">
+                <a href="./index.html">Home</a>
+                <a href="./buy-now-page.html">Models - Buy Now</a>
+                <a href="./find-dealership-page.html">Find Dealership</a>
+            </div>
+
+        </div>
+
+        <footer class="footer-section">
+        
+            <div class="info-container">
+
+                <div class="info-section">
+                    <div class="info-heading-name"><h5>C O N T A C T</h5></div>
+
+                    <div class="footer-links">
+                        <a href="./contact-us-page.html">Contact Us</a>
+                    </div>
+                    
+                </div>
+
+                <div class="info-section">
+                    <div class="info-heading-name"><h5>V I S I T</h5></div>
+
+                    <div class="footer-links">
+                        <a href="https://www.bmw.com/en/index.html">Bmw</a>
+                        <a href="https://www.tesla.com/">Tesla</a>
+                        <a href="https://www.mercedes-benz.com/en/">Mercedes</a>
+                        <a href="https://www.lamborghini.com/en-en">Lamborghini</a>
+                    </div>
+
+                </div>
+
+                <div class="info-section">
+                    <div class="info-heading-name"><h5>R E S O U R C E S</h5></div>
+
+                    <div class="footer-links">
+                        <a href="./blog-page.html">Blog</a>
+                    </div>
+
+                </div>
+
+            </div> <!--Ends Of info-section/links-container-->
+
+            
+            <div class="newsLetter">
+                <h5>Sign Up For Newsletter</h5>
+                <p>Stay updated with the latest in electric automotive technology and our special offers.</p>
+                
+                <div id="feedbackMessage"></div>
+                <form id="newsletterForm" class="email-box">
+                    <input type="email" placeholder="example@email.com" />
+                    <button id="signupButton" type="submit">Sign Up</button>
+                </form>
+            </div> <!--End Of NewsLetter-->
+            
+            
+
+            <div class="social-media-links">
+                <!--Facebook-->
+                <a href="https://www.facebook.com/">
+                    <button>
+                        <img src="./images/facebook-icon.webp">
+                    </button>
+                </a>
+
+                <!--Twitter-->
+                <a href="https://twitter.com/">
+                    <button>
+                        <img src="./images/twitter-icon.webp">
+                    </button>
+                </a>
+
+                <!--Instagram-->
+                <a href="https://www.instagram.com/">
+                    <button>
+                        <img src="./images/insta-icon.webp">
+                    </button>
+                </a>
+
+                <!--Youtube-->
+                <a href="https://www.youtube.com/">
+                    <button>
+                        <img src="./images/youtube-icon.webp">
+                    </button>
+                </a>
+
+            </div> <!--End Of Social Media Links-->
+
+            <p>Electric Automotive Copyright &copy; 2023 All Rights Reserved.</p>
+
+        </footer>
+        
+        <!-- Link To JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./user-account-script.js"></script>
+        
+    </body>
+</html>
