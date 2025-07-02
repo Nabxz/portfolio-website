@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Website Name & Icon-->
+        <title>Hoop Shop</title>
+
+        <!--FavIcon-->
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+        <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!--Link To CSS-->
+        <link rel="stylesheet" href="./assets/css/style.css">
+
+        <!--Link To OpenStreetMap-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+   
+    </head>
+
+    <body>
+        <header>
+            <div class="header-nav-bar">
+
+                <!--Logo-->
+                <div class="header-logo">
+                    <a href="./index.html">
+                        <img src="./assets/images/navbar/logo.webp"> 
+                        <p>HOOP SHOP</p>
+                    </a>
+                    
+                </div>
+
+                <!--Search Bar-->
+                <div class="header-search-bar">
+                    <form method="GET">
+                        <input type="text" name="query" placeholder="Search" class="search-input">
+                        <button type="submit" class="search-button"></button>
+                    </form>                 
+
+                    <!-- Popup Search Results -->
+                    <div class="search-popup" style="display: none;">
+                        <!-- Search results will be dynamically inserted here -->
+                    </div>
+
+                </div>
+
+
+                <!--Icons-->
+                <div class="header-icons">
+                    <!--Profile-->
+                    <a href="./pages/sign-in-page.html">
+                        <img src="./assets/images/navbar/user-icon.png" alt="Profile Icon">
+                    </a>
+
+                    <!--Cart-->
+                    <a href="" id="cart-icon">
+                        <img src="../assets/images/navbar/cart.webp" alt="Cart Icon">
+                        <div id="cart-counter">0</div>
+                    </a>
+                </div> <!--end of icons-->
+
+            </div> <!--End Of header-nav-bar-->
+            
+
+            <div class="header-quick-find">
+
+                <!--Shoes-->
+                <a id="nav-shoes" href="./pages/all-products-page.html?type=Shoe">
+                    <button>Shoes</button>
+                </a>
+
+                <!--Clothing and Off-Court-->
+                <a id="nav-clothing" href="./pages/all-products-page.html?type=OffCourt">
+                    <button>Clothing</button>
+                </a>
+
+                <!--Off-Court-->
+                <a id="nav-offcourt" href="./pages/all-products-page.html?type=OffCourt">
+                    <button>Off-Court</button>
+                </a>
+
+                <!--Equipment-->
+                <a id="nav-equipment" href="./pages/all-products-page.html?type=Ball">
+                    <button>Basketballs</button>
+                </a>
+
+                <!--All-->
+                <a id="nav-all" href="./pages/all-products-page.html">
+                    <button>All</button>
+                </a>
+
+            </div> <!--End of header-quick-find-->
+        </header>
+
+
+
+        <!--Home Page Banner-->
+        <div class="home-main-banner">
+
+            <!-- Navigation buttons -->
+            <button class="banner-nav prev-slide">&lt;</button>
+            <button class="banner-nav next-slide">&gt;</button>
+
+            <!--Slide 1-->
+            <div class="slide active-slide">
+
+                <div class="banner-content">
+                    <p class="basketball-quote">" Basketball: The World's Pulse,<br>Through Our Court, It Beats Louder. "</p>
+                    
+                    <a href="./pages/all-products-page.html">
+                        <button>Shop Now</button>
+                    </a>
+                </div>
+                <img src="./assets/images/homepage/banner.webp" alt="Basketball Action">
+
+            </div> <!--End Of Slide 1-->
+
+            <!--Slide 2-->
+            <div class="slide">
+                
+                <div class="banner-content-promo">
+                    <p class="promo-text">Check Out Our New Shoe Collection!</p>
+                    <a href="./pages/all-products-page.html?type=Shoe">
+                        <button>Shop Now</button>
+                    </a>
+                    
+                </div>
+                <img src="./assets/images/homepage/banner2.webp" alt="Basketball Action">
+
+            </div> <!--End Of Slide 2-->
+
+            <!--Slide 3-->
+            <div class="slide">
+                
+                <div class="banner-content-promo">
+                    <p class="promo-text">Elevate Your Game – Shop The Jordan Collection!</p>
+                    <a href="./pages/all-products-page.html?signature=Jordan">
+                        <button>Shop Now</button>
+                    </a>
+                    
+                </div>
+                <img src="./assets/images/homepage/banner3.webp" alt="Basketball Action">
+
+            </div> <!--End Of Slide 3-->
+
+            <!--Slide 4-->
+            <div class="slide">
+                
+                <div class="banner-content-promo">
+                    <p class="promo-text">Stride with Confidence – Explore the Collection!</p>
+                    <a href="./pages/all-products-page.html">
+                        <button>Shop Now</button>
+                    </a>
+                    
+                </div>
+                <img src="./assets/images/homepage/banner4.webp" alt="Basketball Action">
+
+            </div> <!--End Of Slide 4-->
+
+            <!--Slide 5-->
+            <div class="slide">
+                
+                <div class="banner-content-promo">
+                    <p class="promo-text">Stride with Confidence – Explore the Collection!</p>
+                    <a href="./pages/all-products-page.html">
+                        <button>Shop Now</button>
+                    </a>
+                    
+                </div>
+                <img src="./assets/images/homepage/banner5.webp" alt="Basketball Action">
+
+            </div> <!--End Of Slide 5-->
+
+            <!--Slide 6-->
+            <div class="slide">
+                
+                <div class="banner-content-promo">
+                    <p class="promo-text">Discover Your Unique Look – Shop Our Collection!</p>
+                    <a href="./pages/all-products-page.html">
+                        <button>Shop Now</button>
+                    </a>
+                    
+                </div>
+                <img src="./assets/images/homepage/banner6.webp" alt="Basketball Action">
+
+            </div> <!--End Of Slide 6-->
+            
+
+            <!-- Slide Indicators -->
+            <div class="banner-indicators">
+                <span class="indicator active-indicator"></span> <!-- Repeat for as many slides you have -->
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+
+
+        </div> <!--End of Home Page Banner-->
+        
+
+
+
+        <!--List Of Brands-->
+        <div class="section-intro section">
+            <div class="line" style="margin-top: 30px;"></div>
+            <h5>Check Out Our Partners</h5>
+        </div>
+        <div class="home-page-brands-list">
+
+            <!--Brand 1-->
+            <div class="home-page-brand">
+                <a href="https://www.nike.com">
+                    <img src="./assets/images/brands-logo/Nike.webp">
+                </a>
+            </div>
+
+            <!--Brand 2-->
+            <div class="home-page-brand">
+                <a href="https://www.adidas.com">
+                    <img src="./assets/images/brands-logo/Adidas.webp">
+                </a>
+            </div>
+
+            <!--Brand 3-->
+            <div class="home-page-brand">
+                <a href="https://www.newbalance.com">
+                    <img src="./assets/images/brands-logo/New-Balance.webp">
+                </a>
+            </div>
+
+            <!--Brand 4-->
+            <div class="home-page-brand">
+                <a href="https://www.nike.com/jordan">
+                    <img src="./assets/images/brands-logo/Jordan.webp">
+                </a>
+            </div>
+
+            <!--Brand 5-->
+            <div class="home-page-brand">
+                <a href=" https://us.puma.com">
+                    <img src="./assets/images/brands-logo/Puma.webp">
+                </a>
+            </div>
+
+            <!--Brand 6-->
+            <div class="home-page-brand">
+                <a href="https://www.underarmour.com">
+                    <img src="./assets/images/brands-logo/Under-Armour.webp">
+                </a>
+            </div>
+
+            <!--Brand 7-->
+            <div class="home-page-brand">
+                <a href="https://www.spalding.com">
+                    <img src="./assets/images/brands-logo/Spalding.webp">
+                </a>
+            </div>
+
+            <!--Brand 8-->
+            <div class="home-page-brand">
+                <a href="https://www.wilson.com">
+                    <img src="./assets/images/brands-logo/Wilson.webp">
+                </a>
+            </div>
+
+        </div> <!--End of home-page-brands-list-->
+        
+
+
+        <!--Signature Athletes Links-->
+        <div class="home-page-box-links">
+
+            <div class="section-intro section">
+                <div class="line"></div>
+                <h5>Signature Athletes</h5>
+            </div>
+
+            <div class="box-links container">
+
+                <!--Lebron-->
+                <div class="box-link">
+                    <a href="./pages/all-products-page.html?signature=Lebron">
+                        <img src="./assets/images/signature-athletes/Lebron.webp">
+                        <p>LeBron James</p>
+                    </a>
+                </div>
+
+                <!--Giannis-->
+                <div class="box-link">
+                    <a href="./pages/all-products-page.html?signature=Giannis">
+                        <img src="./assets/images/signature-athletes/Giannis.webp">
+                        <p>Giannis Antetokounmpo</p>
+                    </a>
+                </div>
+
+                <!--Curry-->
+                <div class="box-link">
+                    <a href="./pages/all-products-page.html?signature=Curry">
+                        <img src="./assets/images/signature-athletes/Curry.webp">
+                        <p>Stephen Curry</p>
+                    </a>
+                </div>
+
+                <!--MJ-->
+                <div class="box-link last-box-link">
+                    <a href="./pages/all-products-page.html?signature=Jordan">
+                        <img src="./assets/images/signature-athletes/MJ.webp">
+                        <p>Michael Jordan</p>
+                    </a>
+                </div>
+
+            </div> <!--End Of Box-links container-->
+        </div> <!--End Of Signature Athletes Links-->
+
+
+
+        <div class="section-intro section" style="margin-top: 50px;">
+            <div class="line"></div>
+            <h5>Check Out The Store</h5>
+        </div>
+        <!--Quick Links-->
+        <div class="home-page-quick-link">
+
+            <!--Left Side Large Image-->
+            <div class="quick-link-box-left">
+                <a href="./pages/all-products-page.html?type=Ball">
+                    <img src="./assets/images/quick-link/vert-box.webp" alt="Basketballs">
+                    <div class="text-overlay">Basketballs</div>
+                </a>
+            </div>
+
+            <!--Right Side Small Images-->
+            <div class="quick-link-boxes-right">
+
+                <!--Top Right Box-->
+                <div class="quick-link-box top">
+                    <a href="./pages/all-products-page.html?type=OffCourt">
+                        <img src="./assets/images/quick-link/wide-box.webp" alt="Off Court">
+                        <div class="text-overlay">Off-Court</div>
+                    </a>
+                </div>
+
+                <!--Bottom Right Box-->
+                <div class="quick-link-box bottom">
+                    <a href="./pages/all-products-page.html?type=Shoe">
+                        <img src="./assets/images/quick-link/wide-box-2.webp" alt="Shoes">
+                        <div class="text-overlay">Shoes</div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div> <!--End of Quick Links-->
+
+
+        <div id="what-popular-store-section" style="margin-bottom: 10px;">
+
+        </div>
+
+
+        <!--New Releases-->
+        <div class="home-page-new-release">
+
+            <div class="section-intro section" style="margin-bottom: 50px;">
+                <div class="line"></div>
+                <h5>What's Popular</h5>
+
+                <a href="./pages/all-products-page.html">View All</a>
+            </div>
+
+            
+            <!-- Navigation buttons -->
+            <button id="slideLeft" type="button">&lt;</button>
+            <button id="slideRight" type="button">&gt;</button>
+
+            <div class="new-release-wrapper">
+                <!--Items-->
+                <div class="new-release-section">
+
+                        <!--Using JS To Dynamically Display Items-->
+
+                </div> <!--End Of Items-->
+
+                </div> <!--End of new-release-section-->
+            </div> <!-- End of new-release-wrapper -->
+
+        </div> <!--End Of home-page-new-release-->
+
+
+        <!--We Are Here For You Section-->
+        <div class="website-promo" style="margin-top: 20px;">
+            <h5 style="margin-bottom: 50px;">We're Here For You</h5>
+
+            <div class="services-container">
+
+                <div class="service">
+                    <img src="./assets/images/here-for-you/delivery-icon.webp" alt="Ship to Home Icon">
+                    <h3>Ship to Home</h3>
+                    <p>Order online and have products shipped to you.</p>
+                </div>
+
+                <div class="service">
+                    <img src="./assets/images/here-for-you/store-icon.webp" alt="In-Store Pickup Icon">
+                    <h3>Free In-Store Pickup</h3>
+                    <p>Order online and pick up in store.</p>
+                </div>
+
+                <div class="service">
+                    <img src="./assets/images/here-for-you/credit-icon.webp" alt="Credit Offered Icon">
+                    <h3>Credit Offered</h3>
+                    <p>Turn big purchases into small payments.</p>
+                </div>
+
+                <div class="service">
+                    <img src="./assets/images/here-for-you/call-icon.webp" alt="Customer Support Icon">
+                    <h3>Online Customer Support</h3>
+                    <p>We're here to help you find what you need.</p>
+                    <a href="tel:12345678999">Call 1-(234)-567-8999</a>
+                </div>
+
+            </div> <!--End Of services-container-->
+        </div> <!--End Of website-promo-->
+
+
+
+        <!--Nearby Stores-->
+        <div class="home-page-nearby-store section">
+
+            <div class="section-intro">
+                <div class="line"></div>
+                <h5>Where To Find Us</h5>
+            </div>
+
+            <!-- Map Container -->
+            <div id="mapid" style="height: 500px;">
+                <button id="resetMap" style="position: absolute; top: 10px; right: 10px; z-index: 999;">Reset Map</button>
+            </div>
+
+        </div> <!--End Of Nearby Stores-->
+
+
+        <!--FOOTER-->
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://www.nike.com/">Nike</a></li>
+                        <li><a href="./pages/sign-in-page.html">My Profile</a></li>
+                        <li><a href="./pages/sign-in-page.html">Recent Purchase</a></li>
+                        <li><a href="#what-popular-store-section">What's Popular</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="./pages/contact-us-page.html">Contact Us</a></li>
+                        <li><a href="./pages/contact-us-page.html">Help & FAQ</a></li>
+                        <li><a href="./pages/sign-in-page.html">Order Status</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Join Us</h4>
+                    <ul>
+                        <li><a href="./pages/about-us-page.html">About Us</a></li>
+                        <li><a href="./pages/career.html">Careers</a></li>
+                    </ul>
+                </div>
+
+            </div> <!--End of footer-container-->
+
+            <!-- Payment Methods -->
+            <h4>Payment Methods</h4>
+            <div class="payment-methods">
+                <img src="./assets/images/payment-methods/visa.webp" alt="Visa">
+                <img src="./assets/images/payment-methods/master.webp" alt="MasterCard">
+                <img src="./assets/images/payment-methods/paypal.webp" alt="PayPal">
+                <img src="./assets/images/payment-methods/americal express.webp" alt="American Express">
+                <img src="./assets/images/payment-methods/stripe.webp" alt="Stripe">
+                <!-- Add more payment method images as needed -->
+            </div>
+
+            <!--Socials-->
+            <h4>Social Media</h4>
+            <div class="footer-socials">
+
+                <a href="https://facebook.com">
+                    <img src="./assets/images/social-media/facebook-icon.webp">
+                </a>
+
+                <a href="https://twitter.com">
+                    <img src="./assets/images/social-media/twitter-icon.webp">
+                </a>
+
+                <a href="https://youtube.com">
+                    <img src="./assets/images/social-media/youtube-icon.webp">
+                </a>
+
+                <a href="https://instagram.com">
+                    <img src="./assets/images/social-media/insta-icon.webp">
+                </a>
+                
+            </div> <!--End of footer-socials-->
+        
+            <!-- Legal Links -->
+            <div class="footer-legal">
+                <p>The Hoop Shop Copyright &copy; 2023 All Rights Reserved.</p>
+            </div>
+
+        </footer>
+        
+        
+        <!--Cart-->
+        <div id="mini-cart-container">
+
+            <div class="mini-cart-header">
+                <div class="progress-indicator">
+                    <p>BUY MORE, SAVE MORE:</p>
+                  <p id="progress-text"></p>
+                  <div class="progress-bar">
+                    <span id="progress-bar-fill" style="width: 0%;"></span>
+                  </div>
+                </div>
+            </div>
+
+            <div id="mini-cart-items" class="mini-cart-items">
+              <!-- Cart items will be dynamically inserted here -->
+            </div>
+            
+            <div class="mini-cart-summary">
+
+                <p class="purchase-information">
+                    <span id="tax-total">$0.00</span>
+                    <span id="tax-gst">$0.00</span>
+                    <span id="tax-pst">$0.00</span>
+                    <span id="cart-delivery-fee">$0.00</span>
+                </p>
+
+              <p class="mini-cart-subtotal">Subtotal: CA$<span id="cart-subtotal">0.00</span></p>
+
+              <div class="cart-buttons">
+                <button id="checkout-button" class="checkout-button">Checkout</button>
+                <button id="fullcart-button" class="checkout-button">Go To Cart</button>
+              </div>
+
+            </div>
+        </div> <!--End Of Cart-->
+
+        
+        <!-- Link To JavaScript -->
+        <script src="./assets/js/homepage.js"></script>
+
+    </body>
+</html>

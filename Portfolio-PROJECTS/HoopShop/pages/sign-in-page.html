@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Website Name & Icon-->
+        <title>Sign In - Hoop Shop</title>
+        
+        <!--FavIcon-->
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
+        <link rel="mask-icon" href="../assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!--Link To CSS-->
+        <link rel="stylesheet" href="../assets/css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="header-nav-bar">
+
+                <!--Logo-->
+                <div class="header-logo">
+                    <a href="../index.html">
+                        <img src="../assets/images/navbar/logo.webp"> 
+                        <p>HOOP SHOP</p>
+                    </a>
+                    
+                </div>
+
+                <!--Search Bar-->
+                <div class="header-search-bar">
+                    <form method="GET">
+                        <input type="text" name="query" placeholder="Search" class="search-input">
+                        <button type="submit" class="search-button"></button>
+                    </form>                 
+
+                    <!-- Popup Search Results -->
+                    <div class="search-popup" style="display: none;">
+                        <!-- Search results will be dynamically inserted here -->
+                    </div>
+
+                </div>
+
+
+                <!--Icons-->
+                <div class="header-icons">
+                    <!--Profile-->
+                    <a href="./sign-in-page.html">
+                        <img src="../assets/images/navbar/user-icon.png" alt="Profile Icon">
+                    </a>
+
+                    <!--Cart-->
+                    <a href="" id="cart-icon">
+                        <img src="../assets/images/navbar/cart.webp" alt="Cart Icon">
+                        <div id="cart-counter">0</div>
+                    </a>
+                </div> <!--end of icons-->
+
+            </div> <!--End Of header-nav-bar-->
+            
+
+            <div class="header-quick-find">
+
+                <!--Shoes-->
+                <a id="nav-shoes" href="./all-products-page.html?type=Shoe">
+                    <button>Shoes</button>
+                </a>
+
+                <!--Clothing and Off-Court-->
+                <a id="nav-clothing" href="./all-products-page.html?type=OffCourt">
+                    <button>Clothing</button>
+                </a>
+
+                <!--Off-Court-->
+                <a id="nav-offcourt" href="./all-products-page.html?type=OffCourt">
+                    <button>Off-Court</button>
+                </a>
+
+                <!--Equipment-->
+                <a id="nav-equipment" href="./all-products-page.html?type=Ball">
+                    <button>Basketballs</button>
+                </a>
+
+                <!--All-->
+                <a id="nav-all" href="./all-products-page.html">
+                    <button>All</button>
+                </a>
+
+            </div> <!--End of header-quick-find-->
+        </header>
+
+       <div class="sign-in-page">
+
+        <div class="signin-container">
+
+            <div class="signin-box">
+
+                <img src="../assets/images/sign-in-page/2nd Logo.webp">
+
+                <div class="sign-in-content">
+                    <h1 id="form-title">Log In</h1>
+                    <form id="signin-form">
+                        <input type="text" name="first_name" id="first-name" placeholder="First Name" style="display: none;" required>
+                        <input type="text" name="last_name" id="last-name" placeholder="Last Name" style="display: none;" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <button type="submit" id="sign-in-up-button">Sign Up</button>
+                    </form>
+    
+                    <p class="signin-option" id="signin-signup-prompt">Don't have an account? <a href="" id="signin-signup">Sign Up here</a></p>
+                
+                </div> <!--end of sign-in-content-->
+                
+          
+            </div>
+            <div class="info-panel" id="info-panel-image">
+
+                <h2>Passion for the Game</h2>
+                <p>Embrace the basketball spirit with HoopShop. Gear up and connect with the game you love.</p>
+            
+            </div>
+
+        </div> <!--End Of signin-container-->
+
+
+        <div class="demo-account">
+            <p><b>Demo Account</b></p>
+            <p>Email: test@email.com / test2@email.com</p>
+            <p>Password: testaccount123 (same password)</p>
+        </div>
+
+       </div>
+              
+    
+
+        <!--FOOTER-->
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="https://www.nike.com/">Nike</a></li>
+                        <li><a href="./sign-in-page.html">My Profile</a></li>
+                        <li><a href="./sign-in-page.html">Recent Purchase</a></li>
+                        <li><a href="../index.html#what-popular-store-section">What's Popular</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="./contact-us-page.html">Contact Us</a></li>
+                        <li><a href="./contact-us-page.html">Help & FAQ</a></li>
+                        <li><a href="./sign-in-page.html">Order Status</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Join Us</h4>
+                    <ul>
+                        <li><a href="./about-us-page.html">About Us</a></li>
+                        <li><a href="./career.html">Careers</a></li>
+                    </ul>
+                </div>
+
+            </div> <!--End of footer-container-->
+
+            <!-- Payment Methods -->
+            <h4>Payment Methods</h4>
+            <div class="payment-methods">
+                <img src="../assets/images/payment-methods/visa.webp" alt="Visa">
+                <img src="../assets/images/payment-methods/master.webp" alt="MasterCard">
+                <img src="../assets/images/payment-methods/paypal.webp" alt="PayPal">
+                <img src="../assets/images/payment-methods/americal express.webp" alt="American Express">
+                <img src="../assets/images/payment-methods/stripe.webp" alt="Stripe">
+                <!-- Add more payment method images as needed -->
+            </div>
+
+            <!--Socials-->
+            <h4>Social Media</h4>
+            <div class="footer-socials">
+
+                <a href="https://facebook.com">
+                    <img src="../assets/images/social-media/facebook-icon.webp">
+                </a>
+
+                <a href="https://twitter.com">
+                    <img src="../assets/images/social-media/twitter-icon.webp">
+                </a>
+
+                <a href="https://youtube.com">
+                    <img src="../assets/images/social-media/youtube-icon.webp">
+                </a>
+
+                <a href="https://instagram.com">
+                    <img src="../assets/images/social-media/insta-icon.webp">
+                </a>
+                
+            </div> <!--End of footer-socials-->
+        
+            <!-- Legal Links -->
+            <div class="footer-legal">
+                <p>The Hoop Shop Copyright &copy; 2023 All Rights Reserved.</p>
+            </div>
+
+        </footer>
+
+        
+        <!--Cart-->
+        <div id="mini-cart-container">
+
+            <div class="mini-cart-header">
+                <div class="progress-indicator">
+                    <p>BUY MORE, SAVE MORE:</p>
+                  <p id="progress-text"></p>
+                  <div class="progress-bar">
+                    <span id="progress-bar-fill" style="width: 0%;"></span>
+                  </div>
+                </div>
+            </div>
+
+            <div id="mini-cart-items" class="mini-cart-items">
+              <!-- Cart items will be dynamically inserted here -->
+            </div>
+            
+            <div class="mini-cart-summary">
+
+                <p class="purchase-information">
+                    <span id="tax-total">$0.00</span>
+                    <span id="tax-gst">$0.00</span>
+                    <span id="tax-pst">$0.00</span>
+                    <span id="cart-delivery-fee">$0.00</span>
+                </p>
+
+              <p class="mini-cart-subtotal">Subtotal: CA$<span id="cart-subtotal">0.00</span></p>
+
+              <div class="cart-buttons">
+                <button id="checkout-button" class="checkout-button">Checkout</button>
+                <button id="fullcart-button" class="checkout-button">Go To Cart</button>
+              </div>
+
+            </div>
+        </div> <!--End Of Cart-->
+        
+        
+
+        <!-- Link To JavaScript -->
+        <script src="../assets/js/sign-in.js"></script>
+    </body>
+</html>
