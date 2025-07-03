@@ -1,3 +1,11 @@
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('#nav-link-container ul');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+
 // Particles Effect
 document.addEventListener("DOMContentLoaded", function () {
     particlesJS("particles-js", {
@@ -54,3 +62,5 @@ document.addEventListener("DOMContentLoaded", function () {
         retina_detect: true
     });
 });
+
+

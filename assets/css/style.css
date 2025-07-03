@@ -17,7 +17,6 @@ GLOBAL SETTINGS
 IMPORT SECTION
 ========================================================================== */
 
-
 /* ============================================================  Root  ====*/
 
 :root {
@@ -125,6 +124,8 @@ Section: Navigation Bar (Header)
 ========================================================================== */
 
 header {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,6 +136,12 @@ header {
 
     /* Shadow */
     box-shadow: 0px 1px 25px 0px var(--primaryColor1);
+}
+
+.page-box {
+    height: calc(100vh - 196px);
+    width: 100%;
+    overflow-y: hidden;
 }
 
 .logo-tag {
@@ -157,6 +164,16 @@ header {
     /* Starts after 2s delay */
     margin-left: 5px;
     margin-top: -3px;
+}
+
+/* Hide hamburger by default */
+#hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 @keyframes floating {
@@ -194,9 +211,15 @@ header {
 }
 
 #nav-link-container ul {
-    display: flex;
     list-style-type: none;
     gap: 25px;
+}
+
+/* Show nav links on desktop */
+@media (min-width: 769px) {
+    #nav-link-container ul {
+        display: flex;
+    }
 }
 
 #nav-link-container a {
@@ -209,23 +232,21 @@ header {
 }
 
 
-/* Tablet */
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    #nav-link-container ul {
-        flex-wrap: wrap;
-
-    }
-}
-
-
 /* ==========================================================================
 Page: Home Page
 ========================================================================== */
+
+.home-page {
+    margin-top: 120px;
+}
+
+#right-page-box {
+    margin-top: -120px;
+}
+
+#right-page-box .about-me-box {
+    margin-top: 120px;
+}
 
 #particles-js {
     position: fixed;
@@ -239,18 +260,9 @@ Page: Home Page
     pointer-events: none;
 }
 
-.home-page {
-    margin-top: 120px;
-}
-
 .double-box-conainer {
     display: flex;
     gap: 35px;
-}
-
-.page-box {
-    width: 100%;
-    height: calc(100vh - 196px);
 }
 
 .my-details-box img {
@@ -315,22 +327,43 @@ Page: Home Page
 
 /* MAIN CONTTENT */
 
+/* Desktop scroll area */
+@media (min-width: 769px) {
+    .scroller-container {
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
 
+    #right-page-box {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
 
-.scroller-container {
-    margin-top: -120px;
-    height: 110%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    .inner-content {
+        padding-bottom: 50px;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
 }
+
+/* Mobile: let the page scroll naturally */
+@media (max-width: 768px) {
+    .scroller-container {
+        height: auto;
+        overflow: visible;
+    }
+}
+
 
 .inner-content {
     padding-right: 50px;
-}
-
-.about-me-box {
-    padding-top: 120px;
 }
 
 /* Styling the scrollbar */
@@ -339,7 +372,7 @@ Page: Home Page
 }
 
 .scroller-container::-webkit-scrollbar-track {
-    margin-top: 50px;
+    margin-top: 120px;
     background: transparent;
     border-radius: 10px;
 }
@@ -529,7 +562,7 @@ Page: Home Page
 }
 
 .skills-box {
-    width: 450px;
+
     border: 1px solid var(--keywordFont);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 16px;
@@ -648,12 +681,108 @@ footer p {
     .skills-box--subHeader {
         justify-content: space-around;
     }
-
-
-
-
 }
 
+@media (max-width: 768px) {
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 5px 50px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #nav-link-container ul {
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background-color: var(--backgroundColor1);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px var(--primaryColor1);
+        z-index: 999;
+    }
+
+    #nav-link-container ul.show {
+        display: flex;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    .home-page {
+        margin-top: 120px;
+    }
+
+    .page-box {
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .double-box-conainer {
+        flex-direction: column;
+    }
+
+    .my-details-box {
+        margin-top: -12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .my-details-box h1 {
+        margin-top: 25px;
+    }
+
+    .inner-content {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .work-box {
+        margin-left: -20px;
+        margin-bottom: 12px;
+    }
+
+    .about-me-box {
+        padding-top: 120px;
+    }
+
+    .about-me-box,
+    .section-heading,
+    .work-box-container,
+    .skills-container {
+        text-align: center;
+    }
+
+    .work-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-action-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .skills-container {
+        align-items: center;
+    }
+
+}
 
 /* ==========================================================================
 Page: More Info
@@ -757,6 +886,10 @@ Page: More Info
     font-weight: 100;
     margin-left: 0;
     margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
 }
 
 /* Style the modal (background) */
