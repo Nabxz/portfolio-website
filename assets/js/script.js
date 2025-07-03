@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 // Smoothly slow down particle speed and reduce line_linked.distance
 function animateParticleSpeedAndDistance(fromSpeed, toSpeed, fromDistance, toDistance, duration) {
     const startTime = performance.now();
@@ -106,7 +107,6 @@ function animateParticleSpeedAndDistance(fromSpeed, toSpeed, fromDistance, toDis
 animateParticleSpeedAndDistance(17, 0.3, 500, 50, 2000);
 
 
-
 function startShootingStars() {
     const canvas = document.getElementById('shooting-stars-canvas');
     const ctx = canvas.getContext('2d');
@@ -122,9 +122,9 @@ function startShootingStars() {
 
     function createStar() {
         const x = Math.random() * width;
-        const y = Math.pow(Math.random(), 2.5) * height / 2;
+        const y = Math.random() * 100;
         const length = Math.random() * 300 + 100;
-        const speed = Math.random() * 2 + 2;
+        const speed = Math.random() * 1.2 + 0.8; // 0.8–2.0
         const angle = Math.PI / 4; // 45 degrees
         shootingStars.push({ x, y, length, speed, angle, alpha: 1 });
     }
@@ -133,16 +133,28 @@ function startShootingStars() {
         ctx.clearRect(0, 0, width, height);
         for (let i = shootingStars.length - 1; i >= 0; i--) {
             const star = shootingStars[i];
+
+            const headX = star.x;
+            const headY = star.y;
+            const tailX = star.x - star.length * Math.cos(star.angle);
+            const tailY = star.y - star.length * Math.sin(star.angle);
+
+            // Create gradient from tail (transparent) to head (opaque)
+            const gradient = ctx.createLinearGradient(tailX, tailY, headX, headY);
+            gradient.addColorStop(0, `rgba(255, 255, 255, 0)`); // tail
+            gradient.addColorStop(1, `rgba(255, 255, 255, ${star.alpha})`); // head
+
             ctx.beginPath();
-            ctx.moveTo(star.x, star.y);
-            ctx.lineTo(star.x - star.length * Math.cos(star.angle), star.y - star.length * Math.sin(star.angle));
-            ctx.strokeStyle = `rgba(255, 255, 255, ${star.alpha})`;
+            ctx.moveTo(headX, headY);
+            ctx.lineTo(tailX, tailY);
+            ctx.strokeStyle = gradient;
             ctx.lineWidth = 2;
             ctx.stroke();
 
+            // Update star position and fade
             star.x += star.speed * Math.cos(star.angle);
             star.y += star.speed * Math.sin(star.angle);
-            star.alpha -= 0.01;
+            star.alpha -= 0.004;
 
             if (star.alpha <= 0) {
                 shootingStars.splice(i, 1);
@@ -151,9 +163,13 @@ function startShootingStars() {
         requestAnimationFrame(update);
     }
 
+
     setInterval(() => {
-        if (Math.random() < 0.5) {
-            createStar();
+        if (Math.random() < 0.6) {
+            const count = Math.floor(Math.random() * 4) + 1; // 1 to 4
+            for (let i = 0; i < count; i++) {
+                createStar();
+            }
         }
     }, 3000);
 
