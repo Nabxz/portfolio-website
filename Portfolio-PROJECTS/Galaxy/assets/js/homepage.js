@@ -942,10 +942,10 @@ function setupImageLayout() {
 
     for (let i = 1; i <= 6; i++) {
       content += `
-          <img src="/portfolio-website/Portfolio-PROJECTS/Galaxy/assets/images/gallery/${planet}/image${i}.webp" 
+          <img src="/assets/images/gallery/${planet}/image${i}.webp" 
                alt="${planet} Image ${i}" 
                class="gallery-image"
-               onclick="openModal('/portfolio-website/Portfolio-PROJECTS/Galaxy/assets/images/gallery/${planet}/image${i}.webp')">
+               onclick="openModal('../assets/images/gallery/${planet}/image${i}.webp')">
           `;
     }
 
