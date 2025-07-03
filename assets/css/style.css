@@ -347,10 +347,6 @@ Page: Home Page
         padding-bottom: 50px;
     }
 
-    body {
-        overflow: hidden;
-    }
-
 }
 
 /* Mobile: let the page scroll naturally */
