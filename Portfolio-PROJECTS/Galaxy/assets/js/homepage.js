@@ -1,4 +1,10 @@
-
+// ======================= API KEYS =========================
+// These are public API keys used only for frontend access.
+// No sensitive or private data is exposed.
+const NASA_API_KEY = '8bfipn3VWwLJ2DSaLgpe1ahUqyClVRgXVzzU4bf3';
+const PIXABAY_API_KEY = '42125043-2968fdba89cd7449c6b66fc1a';
+const NINJA_API_KEY = 'SIXR4HfeuM/pnmiN/JYDAw==ZtPyP4PN0vYLqdmr';
+// =========================================================
 
 
 // HOME PAGE SEARCH BAR
@@ -451,8 +457,8 @@ function populateHomeLayout() {
   const startDate = new Date(new Date().setDate(new Date().getDate() - 30)).toISOString().split('T')[0];
 
   // Update API URLs to point to your server
-  const cmeUrl = `https://galaxy.mammani.com/api/nasa/cme?startDate=${startDate}&endDate=${currentDate}`;
-  const flrUrl = `https://galaxy.mammani.com/api/nasa/flr?startDate=${startDate}&endDate=${currentDate}`;
+  const cmeUrl = `https://api.nasa.gov/DONKI/CME?startDate=${startDate}&endDate=${currentDate}&api_key=${NASA_API_KEY}`;
+  const flrUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${startDate}&endDate=${currentDate}&api_key=${NASA_API_KEY}`;
 
 
 
@@ -936,10 +942,10 @@ function setupImageLayout() {
 
     for (let i = 1; i <= 6; i++) {
       content += `
-          <img src="../assets/images/gallery/${planet}/image${i}.webp" 
+          <img src="/portfolio-website/Portfolio-PROJECTS/Galaxy/assets/images/gallery/${planet}/image${i}.webp" 
                alt="${planet} Image ${i}" 
                class="gallery-image"
-               onclick="openModal('../assets/images/gallery/${planet}/image${i}.webp')">
+               onclick="openModal('/portfolio-website/Portfolio-PROJECTS/Galaxy/assets/images/gallery/${planet}/image${i}.webp')">
           `;
     }
 
@@ -958,7 +964,7 @@ function setupImageLayout() {
 
 // Client-side JavaScript to fetch and display the NASA Image of the Day
 function fetchNasaImageOfTheDay() {
-  fetch('https://galaxy.mammani.com/api/nasa/image-of-the-day')
+  fetch('https://api.nasa.gov/planetary/apod?api_key=' + NASA_API_KEY)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -967,9 +973,11 @@ function fetchNasaImageOfTheDay() {
     })
     .then(data => {
       const imageOfTheDayContainer = document.querySelector('.image-of-day-container');
+      const attribution = document.getElementById('nasa-attribution');
+
+      if (!imageOfTheDayContainer) return;
 
       if (data && data.url) {
-
         if (data.media_type === 'image') {
           imageOfTheDayContainer.innerHTML = `
             <img src="${data.url}" alt="NASA Image of the Day">
@@ -983,16 +991,25 @@ function fetchNasaImageOfTheDay() {
             <p>${data.explanation}</p>
           `;
         }
+
+        if (attribution && data.copyright) {
+          attribution.textContent = `Image Credit: ${data.copyright}`;
+        } else if (attribution) {
+          attribution.style.display = 'none';
+        }
+
       } else {
         throw new Error('No image data found.');
       }
     })
     .catch(error => {
       console.error('Error fetching Image of the Day:', error);
-      imageOfTheDayContainer.innerHTML = '<p>Error loading the NASA Image of the Day.</p>';
+      const imageOfTheDayContainer = document.querySelector('.image-of-day-container');
+      if (imageOfTheDayContainer) {
+        imageOfTheDayContainer.innerHTML = '<p>Error loading the NASA Image of the Day.</p>';
+      }
     });
 }
-
 
 
 
@@ -1286,7 +1303,7 @@ async function updateEarthSectionDisplay(data) {
         // Process and display the images as needed
         console.log(pixabayData.hits); // Log the images or update the DOM with image URLs
       }
-    } catch (error) {    
+    } catch (error) {
       console.error('Error fetching images from Pixabay:', error);
     }
 
@@ -1335,7 +1352,7 @@ async function updateEarthSectionDisplay(data) {
     // Now let's get the images for the city
     try {
       const pixabayResponse = await fetch(`https://galaxy.mammani.com/api/pixabay/images?q=${encodeURIComponent(data.name)}`);
-  const pixabayData = await pixabayResponse.json();
+      const pixabayData = await pixabayResponse.json();
       if (pixabayData.hits && pixabayData.hits.length > 0) {
         // Process and display the images as needed
         console.log(pixabayData.hits); // Log the images or update the DOM with image URLs
