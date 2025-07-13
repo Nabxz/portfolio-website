@@ -875,7 +875,12 @@ function fetchNasaImageOfTheDay () {
       if (data && data.url) {
         if (data.media_type === 'image') {
           imageOfTheDayContainer.innerHTML = `
-            <img src="${data.url}" alt="NASA Image of the Day">
+          <img 
+            src="${data.url}" 
+            alt="NASA Image of the Day" 
+            style="cursor:pointer"
+            onclick="openModal('${data.url}')"
+          >
             <h3>${data.title}</h3>
             <p>${data.explanation}</p>
           `
