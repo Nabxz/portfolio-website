@@ -27,22 +27,26 @@ document.querySelector('.search-input').addEventListener('input', function (e) {
 
 // Function to search planets using the API
 function searchPlanets (query) {
-  // Update the URL to point to your server's endpoint
-  const serverApiURL =
-    'https://galaxy.mammani.com/api/planets/search?name=' +
-    encodeURIComponent(query)
+  const apiURL = `https://api.api-ninjas.com/v1/planets?name=${encodeURIComponent(
+    query
+  )}`
 
-  $.ajax({
+  fetch(apiURL, {
     method: 'GET',
-    url: serverApiURL,
-    contentType: 'application/json',
-    success: function (result) {
-      displaySearchResults(result) // Function to display results
-    },
-    error: function ajaxError (jqXHR) {
-      console.error('Error: ', jqXHR.responseText)
+    headers: {
+      'X-Api-Key': NINJA_API_KEY
     }
   })
+    .then(response => {
+      if (!response.ok) throw new Error('Failed to fetch planet data')
+      return response.json()
+    })
+    .then(data => {
+      displaySearchResults(data)
+    })
+    .catch(error => {
+      console.error('Error fetching planet data:', error)
+    })
 }
 
 // Function to display search results
@@ -982,17 +986,13 @@ function attachCloseButtonListener () {
 // Function to get city data
 function getCityData (searchTerm) {
   return fetch(
-    `https://galaxy.mammani.com/api/city?name=${encodeURIComponent(
-      searchTerm
-    )}`,
+    `https://api.api-ninjas.com/v1/city?name=${encodeURIComponent(searchTerm)}`,
     {
-      method: 'GET'
+      headers: { 'X-Api-Key': NINJA_API_KEY }
     }
   )
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok.')
-      }
+      if (!response.ok) throw new Error('Failed to fetch city data')
       return response.json()
     })
     .catch(error => {
@@ -1003,17 +1003,15 @@ function getCityData (searchTerm) {
 // Function to get country data
 function getCountryData (searchTerm) {
   return fetch(
-    `https://galaxy.mammani.com/api/country?name=${encodeURIComponent(
+    `https://api.api-ninjas.com/v1/country?name=${encodeURIComponent(
       searchTerm
     )}`,
     {
-      method: 'GET'
+      headers: { 'X-Api-Key': NINJA_API_KEY }
     }
   )
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok.')
-      }
+      if (!response.ok) throw new Error('Failed to fetch country data')
       return response.json()
     })
     .catch(error => {
@@ -1173,12 +1171,10 @@ async function updateEarthSectionDisplay (data) {
     // Fetch the capital city's data to get latitude and longitude
     try {
       const cityResponse = await fetch(
-        `https://galaxy.mammani.com/api/capital-city?name=${encodeURIComponent(
+        `https://api.api-ninjas.com/v1/city?name=${encodeURIComponent(
           data.capital
         )}`,
-        {
-          method: 'GET'
-        }
+        { headers: { 'X-Api-Key': NINJA_API_KEY } }
       )
 
       const cityData = await cityResponse.json() // Directly receive the parsed JSON data
@@ -1195,20 +1191,8 @@ async function updateEarthSectionDisplay (data) {
     }
 
     // Now let's get the images for the country's capital city
-    try {
-      const pixabayResponse = await fetch(
-        `https://galaxy.mammani.com/api/pixabay/images?q=${encodeURIComponent(
-          data.capital
-        )}`
-      )
-      const pixabayData = await pixabayResponse.json()
-      if (pixabayData.hits && pixabayData.hits.length > 0) {
-        // Process and display the images as needed
-        console.log(pixabayData.hits) // Log the images or update the DOM with image URLs
-      }
-    } catch (error) {
-      console.error('Error fetching images from Pixabay:', error)
-    }
+    const images = await fetchImagesFromPixabay(data.capital)
+    console.log(images)
 
     // For countries, we assume the capital city's weather is desired
     cityName = data.capital
@@ -1254,20 +1238,9 @@ async function updateEarthSectionDisplay (data) {
     cityName = data.name
 
     // Now let's get the images for the city
-    try {
-      const pixabayResponse = await fetch(
-        `https://galaxy.mammani.com/api/pixabay/images?q=${encodeURIComponent(
-          data.name
-        )}`
-      )
-      const pixabayData = await pixabayResponse.json()
-      if (pixabayData.hits && pixabayData.hits.length > 0) {
-        // Process and display the images as needed
-        console.log(pixabayData.hits) // Log the images or update the DOM with image URLs
-      }
-    } catch (error) {
-      console.error('Error fetching images from Pixabay:', error)
-    }
+    const images = await fetchImagesFromPixabay(data.name)
+    console.log(images)
+
     // For cities, use the city name
     weatherFetchUrl = `https://api.api-ninjas.com/v1/weather?city=${encodeURIComponent(
       data.name
@@ -1291,12 +1264,10 @@ async function updateEarthSectionDisplay (data) {
     )
     .join('')
 
-  // Fetch weather data
-  fetch(
-    `https://galaxy.mammani.com/api/weather?city=${encodeURIComponent(
-      cityName
-    )}`
-  )
+  // Fetch weather data using lat/lon instead of city name (city name is now for premium)
+  fetch(`https://api.api-ninjas.com/v1/weather?lat=${lat}&lon=${lon}`, {
+    headers: { 'X-Api-Key': NINJA_API_KEY }
+  })
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -1307,14 +1278,9 @@ async function updateEarthSectionDisplay (data) {
       // Now fetch the local time using the city name
       return Promise.all([
         weatherData,
-        fetch(
-          `https://galaxy.mammani.com/api/worldtime?city=${encodeURIComponent(
-            cityName
-          )}`,
-          {
-            method: 'GET'
-          }
-        ).then(response => {
+        fetch(`https://api.api-ninjas.com/v1/worldtime?lat=${lat}&lon=${lon}`, {
+          headers: { 'X-Api-Key': NINJA_API_KEY }
+        }).then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`)
           }
@@ -1357,7 +1323,7 @@ async function updateEarthSectionDisplay (data) {
 
           <div class="weather-info-section-box">
             <div class="title">
-              <img src="../assets/images/homepage/weather-icons-humidity.webp">
+              <img src="./assets/images/homepage/weather-icons-humidity.webp">
               <p>Humidity</p>
             </div>
             <div class="data">
@@ -1368,7 +1334,7 @@ async function updateEarthSectionDisplay (data) {
 
           <div class="weather-info-section-box">
             <div class="title">
-              <img src="../assets/images/homepage/weather-icons-wind.webp">
+              <img src="./assets/images/homepage/weather-icons-wind.webp">
               <p>Wind</p>
             </div>
             <div class="data">
@@ -1379,7 +1345,7 @@ async function updateEarthSectionDisplay (data) {
 
           <div class="weather-info-section-box">
             <div class="title">
-              <img src="../assets/images/homepage/weather-icons-wind-direction.webp">
+              <img src="./assets/images/homepage/weather-icons-wind-direction.webp">
               <p>Wind Direction</p>
             </div>
             <div class="data">
@@ -1390,7 +1356,7 @@ async function updateEarthSectionDisplay (data) {
 
           <div class="weather-info-section-box">
             <div class="title">
-              <img src="../assets/images/homepage/weather-icons-precipitation.webp">
+              <img src="./assets/images/homepage/weather-icons-precipitation.webp">
               <p>Precipitation</p>
             </div>
             <div class="data">
@@ -1463,10 +1429,10 @@ async function fetchImagesFromPixabay (cityName) {
   // Perform two fetch requests in parallel to your server-side endpoint
   const [cityResponse, viewResponse] = await Promise.all([
     fetch(
-      `https://galaxy.mammani.com/api/pixabay/search?term=${searchTermsCity}`
+      `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${searchTermsCity}&image_type=photo&per_page=6&safesearch=true`
     ),
     fetch(
-      `https://galaxy.mammani.com/api/pixabay/search?term=${searchTermsView}`
+      `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${searchTermsView}&image_type=photo&per_page=6&safesearch=true`
     )
   ])
 
