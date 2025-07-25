@@ -1,3 +1,9 @@
+// ======================= API KEYS =========================
+// These are public API keys used only for frontend access.
+// No sensitive or private data is exposed.
+const NINJA_API_KEY = 'SIXR4HfeuM/pnmiN/JYDAw==ZtPyP4PN0vYLqdmr'
+// =========================================================
+
 /* Sign Up For Newsletter - Using Node.js */
 const emailInput = document.querySelector('.email-box input');
 const feedbackMessage = document.getElementById("feedbackMessage");
@@ -76,88 +82,73 @@ function capitalizeFirstLetter(str) {
 
 function searchCarInfo() {
     var model = document.getElementById("carModel").value.trim().toLowerCase();
-    var year = document.getElementById("carYear").value;
+    var year = document.getElementById("carYear").value.trim();
 
-    // Tesla
-    if (model === "tesla") {
-        window.location.href = './Cars For Sale/tesla-model-s.html';
-        return;  // Exit the function early
-    }
+    // Handle hardcoded routes for some known models
+    const redirects = {
+        tesla: './Cars For Sale/tesla-model-s.html',
+        bmw: './Cars For Sale/bmw-elysium.html',
+        lamborghini: './Cars For Sale/lamborghini-lanzador.html',
+        mercerdes: './Cars For Sale/mercedes-eqa.html'
+    };
 
-    // BMW
-    if (model === "bmw") {
-        window.location.href = './Cars For Sale/bmw-elysium.html';
-        return;  // Exit the function early
-    }
-
-    // Lamborgini
-    if (model === "lamborghini") {
-        window.location.href = './Cars For Sale/lamborghini-lanzador.html';
-        return;  // Exit the function early
-    }
-
-    // Mercerdes
-    if (model === "mercerdes") {
-        window.location.href = './Cars For Sale/mercedes-eqa.html';
-        return;  // Exit the function early
+    if (redirects[model]) {
+        window.location.href = redirects[model];
+        return;
     }
 
 
-    $.ajax({
+    let url = `https://api.api-ninjas.com/v1/cars?model=${encodeURIComponent(model)}`;
+    if (year && /^\d{4}$/.test(year)) {
+        url += `&year=${encodeURIComponent(year)}`;
+    }
+
+    fetch(url, {
         method: 'GET',
-        url: 'https://electric.mammani.com/getCarInfo?model=' + model + '&year=' + year,
-        contentType: 'application/json',
-        success: function (result) {
-            // Clear previous results
-            document.getElementById("result").innerHTML = "";
-
-            if (result.message) {
-                document.getElementById("result").innerHTML = result.message;
-            } else {
-                // Process and display the results in a structured way
-                const carResultsDiv = document.querySelector(".car-results");
-
-                carResultsDiv.innerHTML = "";  // Clear previous results
-
-                if (result.length === 0) {
-                    carResultsDiv.innerHTML = "No car found.";
-                } else {
-
-                    // Assuming `result` is the array of car info you've fetched or filtered
-                    result.forEach(car => {
-
-                        const carDiv = document.createElement("div");
-                        carDiv.className = "car-card";
-
-                        const capitalizedMake = capitalizeFirstLetter(car.make);
-                        const capitalizedModel = capitalizeFirstLetter(car.model);
-                        const capitalizedClass = capitalizeFirstLetter(car.class);
-                        const capitalizedFuelType = capitalizeFirstLetter(car.fuel_type);
-                        const capitalizedTransmission = capitalizeFirstLetter(car.transmission);
-
-                        const carDetails = `
-                            <h6>${capitalizedMake} ${capitalizedModel} (${car.year})</h6>
-                            <p><strong>Class:</strong> ${capitalizedClass}</p>
-                            <p><strong>MPG (City):</strong> ${car.city_mpg}</p>
-                            <p><strong>MPG (Highway):</strong> ${car.highway_mpg}</p>
-                            <p><strong>Fuel Type:</strong> ${capitalizedFuelType}</p>
-                            <p><strong>Transmission:</strong> ${capitalizedTransmission}</p>
-
-                            <a href="./find-dealership-page.html" class="dealership-button">Find a Dealership</a>
-                        `;
-
-
-                        carDiv.innerHTML = carDetails;
-                        carResultsDiv.appendChild(carDiv);
-                    });
-
-                }
-
-            }
-        },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
+        headers: {
+            'X-Api-Key': NINJA_API_KEY
         }
+    })
+    .then(response => {
+        if (!response.ok) throw new Error(`API Error: ${response.status}`);
+        return response.json();
+    })
+    .then(data => {
+        const carResultsDiv = document.querySelector(".car-results");
+        carResultsDiv.innerHTML = "";
+
+        if (!data || data.length === 0) {
+            carResultsDiv.innerHTML = "No car found.";
+            return;
+        }
+
+        data.forEach(car => {
+            const carDiv = document.createElement("div");
+            carDiv.className = "car-card";
+
+            const capitalizedMake = capitalizeFirstLetter(car.make);
+            const capitalizedModel = capitalizeFirstLetter(car.model);
+            const capitalizedClass = capitalizeFirstLetter(car.class);
+            const capitalizedFuelType = capitalizeFirstLetter(car.fuel_type);
+            const capitalizedTransmission = car.transmission === 'a' ? 'Automatic' : 'Manual';
+
+            const carDetails = `
+                <h6>${capitalizedMake} ${capitalizedModel} (${car.year})</h6>
+                <p><strong>Class:</strong> ${capitalizedClass}</p>
+                <p><strong>MPG (City):</strong> ${car.city_mpg}</p>
+                <p><strong>MPG (Highway):</strong> ${car.highway_mpg}</p>
+                <p><strong>Fuel Type:</strong> ${capitalizedFuelType}</p>
+                <p><strong>Transmission:</strong> ${capitalizedTransmission}</p>
+                <a href="./find-dealership-page.html" class="dealership-button">Find a Dealership</a>
+            `;
+
+            carDiv.innerHTML = carDetails;
+            carResultsDiv.appendChild(carDiv);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching car info:', error);
+        document.querySelector(".car-results").innerHTML = "Failed to load data. Please try again.";
     });
 }
 

@@ -1110,7 +1110,14 @@ textarea:focus {
 
 .buy-now-search-section p, .buy-now-by-brand-section p {
     font-size: x-large;
-    margin-bottom: 30px;
+    
+}
+
+.api-limit-note {
+    font-size: 0.9rem !important;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
 .buy-now-search-section .buy-now-input, 
@@ -1731,3 +1738,4 @@ textarea:focus {
 .map-container input[type="submit"]:hover {
     background-color: var(--accentColor01);
 }
+
