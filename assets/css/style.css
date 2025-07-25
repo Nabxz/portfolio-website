@@ -306,6 +306,10 @@ Page: Home Page
     align-items: center;
 }
 
+.primary-actions-github {
+    z-index: 10;
+}
+
 .primary-actions .primary-actions-button {
     text-decoration: none;
     color: var(--primaryColor1);
@@ -317,6 +321,7 @@ Page: Home Page
     display: inline-block;
     margin-top: 20px;
     margin-right: 10px;
+    z-index: 10; 
 }
 
 .primary-actions .primary-actions-button:hover {
