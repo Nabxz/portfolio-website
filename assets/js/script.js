@@ -1,6 +1,12 @@
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('#nav-link-container ul');
 const navLinkItems = document.querySelectorAll('#nav-link-container ul li a');
+let tabVisible = true;
+
+document.addEventListener('visibilitychange', () => {
+    tabVisible = document.visibilityState === 'visible';
+});
+
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('show');
@@ -165,6 +171,8 @@ function startShootingStars() {
 
 
     setInterval(() => {
+    if (!tabVisible) return;
+
         if (Math.random() < 0.6) {
             const count = Math.floor(Math.random() * 4) + 1; // 1 to 4
             for (let i = 0; i < count; i++) {
