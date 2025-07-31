@@ -141,7 +141,10 @@ header {
 .page-box {
     height: calc(100vh - 196px);
     width: 100%;
-    overflow-y: hidden;
+}
+
+#left-page-box {
+    margin-top: -60px;
 }
 
 .logo-tag {
