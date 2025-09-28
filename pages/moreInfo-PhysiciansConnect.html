@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim Mamman | PhysiciansConnect</title>
+
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--Link To CSS-->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!--Imported Fonts-->
+    <!--Google Font Poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;1,200&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <!--Logo-->
+        <a href="../index.html" class="logo-tag">
+            <div class="logo">
+                <p>mamani</p>
+                <p class="dev-animated">.dev</p>
+            </div>
+        </a>
+
+
+        <nav id="nav-link-container">
+            <ul>
+                <li><a href="../index.html#aboutMe" class="nav-link">Home</a></li>
+                <li><a href="../index.html#aboutMe" class="nav-link">About</a></li>
+                <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="../index.html#portfolio" class="nav-link">Project</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../assets/resources/IbrahimMamman_Resume.pdf" target="_blank" class="nav-link">View
+                        Resume</a></li>
+                <li><a href="mailto:mammanidev@gmail.com" class="nav-link">Contact Me</a></li>
+            </ul>
+        </nav>
+
+    </header> <!--End Of Header-->
+
+
+    <!-- PROJECT DESCRIBER -->
+    <div class="project-describer-container section">
+
+        <div class="back-button">
+            <button id="backButton">
+                < Back </button>
+        </div>
+
+
+        <h1>PhysiciansConnect</h1>
+        <p>
+            PhysiciansConnect is a healthcare coordination platform for physicians and receptionists. It streamlines
+            <b>appointment scheduling</b>, <b>patient history access</b>, <b>prescriptions</b>, <b>referrals</b>,
+            <b>billing & invoicing</b>, and internal <b>messaging</b>. Built in Java with a
+            <b>3-tier architecture</b> (UI, services, persistence) on an embedded <b>SQLite</b> database to ensure
+            modularity, scalability, and ease of testing. Desktop UI powered by <b>Swing</b>, with comprehensive
+            <b>JUnit 5</b> coverage and production-ready Gradle configuration.
+        </p>
+
+        <div class="key-features">
+            <h2>Key Features And Workflows</h2>
+            <ul>
+                <li>
+                    <b>Appointment Slot Management:</b>
+                    Create, update, and remove physician availability; handle booking conflicts and notifications.
+                </li>
+                <li>
+                    <b>Patient Records & History:</b>
+                    View visit summaries, exam details, and longitudinal timelines for informed decision-making.
+                </li>
+                <li>
+                    <b>Prescriptions:</b>
+                    Search formulary, add dosage and notes, and record prescription history per patient.
+                </li>
+                <li>
+                    <b>Billing & Insurance:</b>
+                    Generate invoices, track payments, and apply insurance adjustments with auditability.
+                </li>
+                <li>
+                    <b>Referrals & Messaging:</b>
+                    Create/track referrals to specialists and use an internal messaging system for team coordination.
+                </li>
+                <li>
+                    <b>Notifications:</b>
+                    Real-time UI alerts for appointment updates, new messages, and billing events.
+                </li>
+                <li>
+                    <b>Profile & Photos:</b>
+                    Local profile photo storage for physicians/receptionists with automatic resizing (200×200).
+                </li>
+                <li>
+                    <b>Architecture:</b>
+                    Clear separation of concerns—Presentation (Swing), Business Logic (managers/services), Persistence
+                    (SQLite JDBC). Swap persistence implementations without touching UI/logic.
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="project-action-buttons">
+            <button onclick="window.open('https://nabxz.github.io/PhysicianConnectWebsite/', '_blank');">Website<span
+                    class="button-link-indicator">↗</span></button>
+            <button onclick="window.open('https://github.com/Nabxz/PhysiciansConnect', '_blank');">Github<span
+                    class="button-link-indicator">↗</span></button>
+        </div>
+
+        <div class="project-tags-container">
+            <div class="project-tag">Java</div>
+            <div class="project-tag">Gradle</div>
+            <div class="project-tag">SQLite (JDBC)</div>
+            <div class="project-tag">Swing</div>
+            <div class="project-tag">3-Tier Architecture</div>
+            <div class="project-tag">Domain-Driven Design</div>
+            <div class="project-tag">JUnit 5 Testing</div>
+            <div class="project-tag">Notifications</div>
+            <div class="project-tag">Billing & Invoicing</div>
+            <div class="project-tag">Insurance Adjustments</div>
+            <div class="project-tag">Messaging</div>
+            <div class="project-tag">Profile Photos</div>
+        </div>
+
+        <hr>
+
+        <div class="project-images-container">
+
+            <img src="../assets/images/project-PhysicianConnect/homepage.webp" alt="Project Image">
+            <img src="../assets/images/project-PhysicianConnect/img1.webp" alt="Project Image">
+            <img src="../assets/images/project-PhysicianConnect/img2.webp" alt="Project Image">
+            <img src="../assets/images/project-PhysicianConnect/img3.webp" alt="Project Image">
+
+        </div>
+
+        <a href="javascript:void(0);" id="backToTopButton" class="back-top-button">Back To Top ↑</a>
+
+
+    </div> <!--End Of project-describer-container-->
+
+    <footer>
+        <p class="alt-footer">Copyright &copy; 2025 Ibrahim Mamman. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+
+    <!-- Link To JavaScript -->
+    <script src="../assets/js/moreInfoScript.js"></script>
+
+</body>
+
+</html>

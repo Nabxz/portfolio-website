@@ -324,7 +324,7 @@ Page: Home Page
     display: inline-block;
     margin-top: 20px;
     margin-right: 10px;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .primary-actions .primary-actions-button:hover {
@@ -408,8 +408,8 @@ Page: Home Page
 }
 
 .section-heading {
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 .work-box-container {
@@ -554,7 +554,6 @@ Page: Home Page
 
 .action-links {
     text-decoration: none;
-
 }
 
 .action-links:hover,
@@ -566,8 +565,7 @@ Page: Home Page
     display: inline-block;
     text-decoration: none;
     transition: transform 0.3s ease;
-    margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .action-links:hover .link-indicator-right {
@@ -974,6 +972,42 @@ footer {
 /* ==========================================================================
 Page: Project Archive
 ========================================================================== */
+
+.projects-note {
+    margin-bottom: 40px;
+}
+
+.filter-bar {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0 1.25rem 0;
+}
+
+.filter-btn {
+    border: 1px solid #cfcfcf;
+    padding: .45rem .8rem;
+    border-radius: 999px;
+    color: #0b0f1b;
+    background: #fff;
+    cursor: pointer;
+    font-size: .95rem;
+    line-height: 1;
+    transition: all .15s ease;
+}
+
+.filter-btn:hover {
+    transform: translateY(-1px);
+}
+
+.filter-btn.active {
+    background: var(--primaryColor1);
+    border-color: var(--primaryColor1);
+}
+
+.projects-table tbody tr[hidden] {
+    display: none;
+}
 
 .projects-table {
     width: 100%;

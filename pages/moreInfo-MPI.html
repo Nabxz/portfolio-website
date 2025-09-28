@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim Mamman | MPI Alarm Monitor</title>
+
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--Link To CSS-->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!--Imported Fonts-->
+    <!--Google Font Poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;1,200&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <!--Logo-->
+        <a href="../index.html" class="logo-tag">
+            <div class="logo">
+                <p>mamani</p>
+                <p class="dev-animated">.dev</p>
+            </div>
+        </a>
+
+
+        <nav id="nav-link-container">
+            <ul>
+                <li><a href="../index.html#aboutMe" class="nav-link">Home</a></li>
+                <li><a href="../index.html#aboutMe" class="nav-link">About</a></li>
+                <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="../index.html#portfolio" class="nav-link">Project</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../assets/resources/IbrahimMamman_Resume.pdf" target="_blank" class="nav-link">View
+                        Resume</a></li>
+                <li><a href="mailto:mammanidev@gmail.com" class="nav-link">Contact Me</a></li>
+            </ul>
+        </nav>
+
+    </header> <!--End Of Header-->
+
+
+    <!-- PROJECT DESCRIBER -->
+    <div class="project-describer-container section">
+
+        <div class="back-button">
+            <button id="backButton">
+                < Back </button>
+        </div>
+
+
+        <h1>MPI Alarm Monitor</h1>
+        <p>
+            A parallel C application using <b>MPI</b> to distribute a fixed set of alarms across worker ranks,
+            compute a severity score per alarm in parallel, and aggregate totals on the manager (rank 0).
+            Demonstrates <b>block data decomposition</b>, point-to-point messaging with
+            <code>MPI_Send</code>/<code>MPI_Recv</code>, and deterministic aggregation on the root process.
+            Built to practice distributed design, workload partitioning, and correctness under concurrency.
+        </p>
+
+        <div class="key-features">
+            <h2>Key Features And Functionalities</h2>
+            <ul>
+                <li>
+                    <b>Parallel Workload Partitioning:</b>
+                    Evenly divides alarms among ranks using block decomposition to maximize utilization and minimize
+                    stragglers.
+                </li>
+                <li>
+                    <b>Message Passing (P2P):</b>
+                    Uses <code>MPI_Send</code>/<code>MPI_Recv</code> for explicit data movement and result collection;
+                    rank 0 orchestrates distribution and gathers partial sums.
+                </li>
+                <li>
+                    <b>Rank/Size Awareness:</b>
+                    Robust handling of edge cases (e.g., fewer alarms than ranks) and non-uniform partitions.
+                </li>
+                <li>
+                    <b>Aggregation & Reduction:</b>
+                    Manager process computes global totals and severity distribution; logs per-rank contributions for
+                    verification and debugging.
+                </li>
+                <li>
+                    <b>Deterministic Runs:</b>
+                    Optional seeded RNG for reproducible severity generation during testing.
+                </li>
+                <li>
+                    <b>Portable Build:</b>
+                    Standard <code>mpicc</code>/<code>mpirun</code> workflow; runs on local multi-core or cluster
+                    environments with OpenMPI/MPICH.
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="project-action-buttons">
+            <button onclick="window.open('https://github.com/Nabxz/mpi-alarm-monitor', '_blank');">
+                Github<span class="button-link-indicator">↗</span>
+            </button>
+        </div>
+
+        <div class="project-tags-container">
+            <div class="project-tag">C</div>
+            <div class="project-tag">MPI</div>
+            <div class="project-tag">Distributed Systems</div>
+            <div class="project-tag">Parallel Programming</div>
+            <div class="project-tag">Block Decomposition</div>
+            <div class="project-tag">Point-to-Point Messaging</div>
+            <div class="project-tag">Root Aggregation</div>
+            <div class="project-tag">OpenMPI / MPICH</div>
+            <div class="project-tag">Reproducible Runs</div>
+        </div>
+
+        <hr>
+
+        <a href="javascript:void(0);" id="backToTopButton" class="back-top-button">Back To Top ↑</a>
+
+    </div> <!--End Of project-describer-container-->
+
+    <footer>
+        <p class="alt-footer">Copyright &copy; 2025 Ibrahim Mamman. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+
+    <!-- Link To JavaScript -->
+    <script src="../assets/js/moreInfoScript.js"></script>
+
+</body>
+
+</html>

@@ -66,6 +66,23 @@
 
 
         <h1>All Projects</h1>
+        <p class="projects-note">For a complete list of my projects, please visit my <a href="https://github.com/Nabxz"
+                class="action-link">Github profile
+                ↗</a></p>
+
+        <!-- PROJECT FILTER BAR -->
+        <div class="filter-bar" id="filterBar" aria-label="Filter projects by language/tech">
+            <button class="filter-btn active" data-lang="All">All</button>
+            <button class="filter-btn" data-lang="Java">Java</button>
+            <button class="filter-btn" data-lang="C">C</button>
+            <button class="filter-btn" data-lang="C++">C++</button>
+            <button class="filter-btn" data-lang="HTML">HTML</button>
+            <button class="filter-btn" data-lang="CSS">CSS</button>
+            <button class="filter-btn" data-lang="JavaScript">JavaScript</button>
+            <button class="filter-btn" data-lang="Node.js">Node.js</button>
+            <button class="filter-btn" data-lang="SQL">SQL</button>
+            <button class="filter-btn" data-lang="API-Integration">API-Integration</button>
+        </div>
 
 
         <table class="projects-table">
@@ -83,106 +100,140 @@
 
             <tbody>
 
-
-                <tr>
-                    <td>
-                        <img src="../assets/images/website-Galaxy/homepage.webp" alt="Project Image">
-                    </td>
-
+                <!-- Galaxy -->
+                <tr data-langs="JavaScript, HTML, CSS, Node.js, SQL, API-Integration">
+                    <td><img src="../assets/images/website-Galaxy/homepage.webp" alt="Project Image"></td>
                     <td>Galaxy</td>
                     <td>
-                        <p>
-                            Full-stack Development,
-                            Secure User Authentication,
-                            Database Management (MySQL),
-                            API Integration.
-                        </p>
+                        <p>Full-stack Development, Secure User Authentication, Database Management (MySQL), API
+                            Integration.</p>
                     </td>
-
                     <td><a href="https://nabxz.github.io/portfolio-website/Portfolio-PROJECTS/Galaxy/"
-                            class="action-link">galaxy.com <span class="action-link-indicator">↗</span></a>
-                    </td>
-
+                            class="action-link">
+                            galaxy.com <span class="action-link-indicator">↗</span></a></td>
                     <td>
-
                         <div class="project-action-buttons">
-                            <button
-                                onclick="window.open('https://github.com/Nabxz/GalaxyWebsite', '_blank');">Github<span
-                                    class="button-link-indicator">↗</span></button>
-                            <button onclick="window.location.href='./moreInfo-Galaxy.html';">More Details<span
-                                    class="button-link-indicator">↗</span></button>
+                            <button onclick="window.open('https://github.com/Nabxz/GalaxyWebsite', '_blank');">Github
+                                <span class="button-link-indicator">↗</span></button>
+                            <button onclick="window.location.href='./moreInfo-Galaxy.html';">More Details
+                                <span class="button-link-indicator">↗</span></button>
                         </div>
                     </td>
                 </tr>
 
-
-                <tr>
-                    <td>
-                        <img src="../assets/images/website-HoopShop/homepage.webp" alt="Project Image">
-                    </td>
-
+                <!-- HoopShop -->
+                <tr data-langs="JavaScript, HTML, CSS, Node.js, SQL, API-Integration">
+                    <td><img src="../assets/images/website-HoopShop/homepage.webp" alt="Project Image"></td>
                     <td>HoopShop</td>
                     <td>
-                        <p>
-                            Full-stack Development,
-                            Secure User Authentication,
-                            E-commerce Functionalities,
-                            Accessibility and Performance.
-                        </p>
+                        <p>Full-stack Development, Secure User Authentication, E-commerce Functionalities, Accessibility
+                            and Performance.</p>
                     </td>
-
                     <td><a href="https://nabxz.github.io/portfolio-website/Portfolio-PROJECTS/HoopShop/"
-                            class="action-link">hoopshop.com <span class="action-link-indicator">↗</span></a>
-                    </td>
-
+                            class="action-link">
+                            hoopshop.com <span class="action-link-indicator">↗</span></a></td>
                     <td>
-
                         <div class="project-action-buttons">
-                            <button
-                                onclick="window.open('https://github.com/Nabxz/HoopShopWebsite', '_blank');">Github<span
-                                    class="button-link-indicator">↗</span></button>
-                            <button onclick="window.location.href='./moreInfo-HoopShop.html';">More Details<span
-                                    class="button-link-indicator">↗</span></button>
+                            <button onclick="window.open('https://github.com/Nabxz/HoopShopWebsite', '_blank');">Github
+                                <span class="button-link-indicator">↗</span></button>
+                            <button onclick="window.location.href='./moreInfo-HoopShop.html';">More Details
+                                <span class="button-link-indicator">↗</span></button>
                         </div>
-
                     </td>
                 </tr>
 
-
-                <tr>
+                <!-- PhysiciansConnect (desktop Java app; no HTML/CSS/Node) -->
+                <tr data-langs="Java, SQL">
+                    <td><img src="../assets/images/project-PhysicianConnect/homepage.webp"
+                            alt="PhysiciansConnect thumbnail"></td>
+                    <td>PhysiciansConnect</td>
                     <td>
-                        <img src="../assets/images/website-ElectricAuto/homepage.webp" alt="Project Image">
+                        <p>Java, Gradle, SQLite (JDBC), Swing, 3-Tier Architecture, JUnit 5, Billing & Invoicing,
+                            Notifications.</p>
                     </td>
+                    <td>
+                        <p>Website</p>
+                        <a href="https://nabxz.github.io/PhysicianConnectWebsite/" class="action-link">
+                            physiciansconnect.com <span class="action-link-indicator">↗</span></a>
+                    </td>
+                    <td>
+                        <div class="project-action-buttons">
+                            <button
+                                onclick="window.open('https://github.com/Nabxz/PhysiciansConnect', '_blank');">Github
+                                <span class="button-link-indicator">↗</span></button>
+                            <button onclick="window.location.href='./moreInfo-PhysiciansConnect.html';">More Details
+                                <span class="button-link-indicator">↗</span></button>
+                        </div>
+                    </td>
+                </tr>
 
+                <!-- MPI Alarm Monitor -->
+                <tr data-langs="C">
+                    <td>
+                        <p>MPI Alarm Monitor</p>
+                    </td>
+                    <td>MPI Alarm Monitor</td>
+                    <td>
+                        <p>C, MPI, Distributed Systems, Block Decomposition, P2P Messaging, Root Aggregation,
+                            OpenMPI/MPICH.</p>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="project-action-buttons">
+                            <button
+                                onclick="window.open('https://github.com/Nabxz/mpi-alarm-monitor', '_blank');">Github
+                                <span class="button-link-indicator">↗</span></button>
+                            <button onclick="window.location.href='./moreInfo-MPI.html';">More Details
+                                <span class="button-link-indicator">↗</span></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Pipeline CPU Simulator -->
+                <tr data-langs="C++">
+                    <td>
+                        <p>CPU Pipeline</p>
+                    </td>
+                    <td>Pipeline CPU Simulator (with Branch Prediction)</td>
+                    <td>
+                        <p>C++, Computer Architecture, Hazard Detection & Forwarding, Static Branch Prediction,
+                            Exception Handling.</p>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="project-action-buttons">
+                            <button
+                                onclick="window.open('https://github.com/Nabxz/pipeline-cpu-simulator', '_blank');">Github
+                                <span class="button-link-indicator">↗</span></button>
+                            <button onclick="window.location.href='./moreInfo-Pipeline.html';">More Details
+                                <span class="button-link-indicator">↗</span></button>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Electric Automotive -->
+                <tr data-langs="JavaScript, HTML, CSS, Node.js, SQL, API-Integration">
+                    <td><img src="../assets/images/website-ElectricAuto/homepage.webp" alt="Project Image"></td>
                     <td>Electric Automotive</td>
                     <td>
-                        <p>
-                            Full-stack Development,
-                            Scalable Server Architecture,
-                            User Profile Management,
-                            API Integration.
-                        </p>
+                        <p>Full-stack Development, Scalable Server Architecture, User Profile Management, API
+                            Integration.</p>
                     </td>
-
                     <td><a href="https://nabxz.github.io/portfolio-website/Portfolio-PROJECTS/Electric_Automotive/Front-End/"
-                            class="action-link">electricauto.com <span class="action-link-indicator">↗</span></a>
-                    </td>
-
+                            class="action-link">electricauto.com <span class="action-link-indicator">↗</span></a></td>
                     <td>
-
                         <div class="project-action-buttons">
                             <button
-                                onclick="window.open('https://github.com/Nabxz/ElectricAutoWebsite', '_blank');">Github<span
-                                    class="button-link-indicator">↗</span></button>
-                            <button onclick="window.location.href='./moreInfo-ElectricAuto.html';">More Details<span
-                                    class="button-link-indicator">↗</span></button>
+                                onclick="window.open('https://github.com/Nabxz/ElectricAutoWebsite', '_blank');">Github
+                                <span class="button-link-indicator">↗</span></button>
+                            <button onclick="window.location.href='./moreInfo-ElectricAuto.html';">More Details
+                                <span class="button-link-indicator">↗</span></button>
                         </div>
-
                     </td>
                 </tr>
 
-
             </tbody>
+
 
         </table>
 
@@ -196,7 +247,7 @@
     </footer>
 
     <!-- Link To JavaScript -->
-    <script src="../assets/js/moreInfoScript.js"></script>
+    <script src="../assets/js/projectArchiveScript.js"></script>
 
 </body>
 
