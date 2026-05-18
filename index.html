@@ -45,8 +45,8 @@
             <ul>
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#aboutMe" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#portfolio" class="nav-link">Project</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
             </ul>
         </nav>
@@ -118,7 +118,7 @@
                             <div class="about-me-paragraph">
                                 <p>
                                     I’ve worked as a <span class="keyword">Software Engineering Intern</span> at
-                                    Andela/Paystack, supported students as a <span class="keyword">Teaching
+                                    Paystack, supported students as a <span class="keyword">Teaching
                                         Assistant</span>, and delivered client-facing project work. My experience spans
                                     <span class="keyword">React, Node.js, Java, Python, C++, and SQL</span>, with a
                                     strong interest in systems that are cleanly designed, measurable, and easy to use.
@@ -138,6 +138,152 @@
                         </div> <!--End of about-me-box-->
 
 
+                        <!--Portfolio Section-->
+                        <h1 class="section-heading scroll-offset" id="portfolio">Projects</h1>
+
+                        <a href="./pages/projectArchive.html" class="action-links">View Full Project Archive <span
+                                class="link-indicator-right">→</span></a>
+
+                        <div class="work-box-container">
+
+                            <!-- Project -->
+                            <a href="./pages/moreInfo-AquaEssence.html" class="work-box">
+
+                                <div class="work-date">
+                                    <p>Aqua Essence<br>Real Client Project</p>
+                                </div>
+
+                                <div class="work-description-container">
+
+                                    <div class="project-description">
+                                        <h1>Aqua Essence <span class="link-indicator">↗</span></h1>
+                                        <p>
+                                            Real-client scheduling and matching system for swim instruction operations.
+                                            Combined <strong>FastAPI (Python)</strong> with <strong>C++17</strong>
+                                            matching logic to assign about 1,800 swimmers per week under availability,
+                                            capacity, skill-level, and operational constraints.
+                                        </p>
+                                    </div>
+
+                                    <div class="project-action-buttons">
+                                        <button type="button"
+                                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='./pages/moreInfo-AquaEssence.html';">
+                                            More Info <span class="button-link-indicator">↗</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="work-tools-container">
+                                        <div class="tools-green">Python</div>
+                                        <div class="tools-green">FastAPI</div>
+                                        <div class="tools-green">C++17</div>
+                                        <div class="tools-green">HTTP/JSON APIs</div>
+                                        <div class="tools-green">Constraint Matching</div>
+                                        <div class="tools-green">Offline Desktop Host</div>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                            <!-- Project -->
+                            <a href="https://nabxz.github.io/portfolio-website/Portfolio-PROJECTS/Galaxy/" target="_blank"
+                                rel="noopener noreferrer" class="work-box">
+
+                                <div class="work-date">
+                                    <img src="./assets/images/website-Galaxy/homepage.webp" alt="Galaxy preview">
+                                </div>
+
+                                <div class="work-description-container">
+
+                                    <div class="project-description">
+                                        <h1>Galaxy <span class="link-indicator">↗</span></h1>
+                                        <p>
+                                            Full-stack space exploration platform using real-time NASA and Pixabay APIs
+                                            for live space imagery, Earth data, articles, missions, and authenticated
+                                            saved content. Built with <strong>JavaScript, Node.js, SQL, Bcrypt, and
+                                                express-session</strong>.
+                                        </p>
+                                    </div>
+
+                                    <div class="project-action-buttons">
+                                        <button
+                                            onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/Nabxz/GalaxyWebsite', '_blank');">
+                                            Github<span class="button-link-indicator">↗</span>
+                                        </button>
+                                        <button
+                                            onclick="event.preventDefault(); event.stopPropagation(); window.open('https://nabxz.github.io/portfolio-website/Portfolio-PROJECTS/Galaxy/', '_blank');">
+                                            Static Demo<span class="button-link-indicator">↗</span>
+                                        </button>
+                                        <button type="button"
+                                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='./pages/moreInfo-Galaxy.html';">
+                                            More Info <span class="button-link-indicator">↗</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="work-tools-container">
+                                        <div class="tools-green">JavaScript</div>
+                                        <div class="tools-green">Node.js</div>
+                                        <div class="tools-green">SQL</div>
+                                        <div class="tools-green">API Integration</div>
+                                        <div class="tools-green">Bcrypt</div>
+                                        <div class="tools-green">Real-Time Data</div>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                            <!-- Project -->
+                            <a href="https://github.com/Nabxz/PhysiciansConnect" target="_blank"
+                                rel="noopener noreferrer" class="work-box">
+
+                                <div class="work-date">
+                                    <img src="./assets/images/project-PhysicianConnect/homepage.webp"
+                                        alt="PhysiciansConnect preview">
+                                </div>
+
+                                <div class="work-description-container">
+
+                                    <div class="project-description">
+                                        <h1>PhysiciansConnect <span class="link-indicator">↗</span></h1>
+                                        <p>
+                                            Healthcare coordination platform for physicians and receptionists with
+                                            scheduling, patient history, prescriptions, referrals, messaging, and
+                                            billing. Built with a <strong>3-tier Java architecture</strong> and
+                                            database persistence to keep domain logic organized, testable, and
+                                            maintainable.
+                                        </p>
+                                    </div>
+
+                                    <div class="project-action-buttons">
+                                        <button
+                                            onclick="window.open('https://github.com/Nabxz/PhysiciansConnect', '_blank');">
+                                            Github<span class="button-link-indicator">↗</span>
+                                        </button>
+                                        <button
+                                            onclick="window.open('https://nabxz.github.io/PhysicianConnectWebsite/', '_blank');">
+                                            Website Presentation<span class="button-link-indicator">↗</span>
+                                        </button>
+                                        <button type="button"
+                                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='./pages/moreInfo-PhysiciansConnect.html';">
+                                            More Info <span class="button-link-indicator">↗</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="work-tools-container">
+                                        <div class="tools-green">Java</div>
+                                        <div class="tools-green">SQL</div>
+                                        <div class="tools-green">3-Tier Architecture</div>
+                                        <div class="tools-green">Scheduling</div>
+                                        <div class="tools-green">Messaging</div>
+                                        <div class="tools-green">Notifications</div>
+                                        <div class="tools-green">Billing & Invoicing</div>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div> <!-- end of work-box-container -->
+
+
                         <!--Work Experience Section-->
                         <h1 class="section-heading scroll-offset" id="experience">Work Experience</h1>
 
@@ -145,6 +291,36 @@
                             Full Résumé<span class="link-indicator-right">→</span></a>
 
                         <div class="work-box-container">
+
+                            <!--Work-->
+                            <a href="https://paystack.com/" target="_blank" rel="noopener noreferrer"
+                                class="work-box">
+
+                                <div class="work-date">Aug 2020 – Dec 2021<br>Nigeria (Remote)</div>
+                                <div class="work-description-container">
+
+                                    <div class="work-description">
+                                        <h1>Software Engineering Intern • Paystack <span
+                                                class="link-indicator">↗</span></h1>
+                                        <p>
+                                            Built an internal analytics dashboard with React and Node.js to visualize
+                                            engineering performance metrics and improve team visibility. Refactored
+                                            legacy Python modules for 20% better efficiency and added Jest/Mocha test
+                                            coverage that reduced manual QA time by 30%.
+                                        </p>
+                                    </div>
+                                    <div class="work-tools-container">
+                                        <div class="tools">React</div>
+                                        <div class="tools">Node.js</div>
+                                        <div class="tools">Python</div>
+                                        <div class="tools">Jest</div>
+                                        <div class="tools">Mocha</div>
+                                        <div class="tools">REST API</div>
+                                    </div>
+
+                                </div>
+
+                            </a>
 
                             <!--Work-->
                             <a href="https://umanitoba.ca" target="_blank" rel="noopener noreferrer" class="work-box">
@@ -202,184 +378,7 @@
                                 </div>
 
                             </a>
-
-                            <!--Work-->
-                            <a href="https://www.andela.com/?utm_medium=cpc&utm_source=google&utm_campaign=brand-andela&utm_term=andela&matchtype=p&device=c&utm_content=673635100285_&utm_position=&gad_source=1&gad_campaignid=20542602473&gbraid=0AAAAACit1TMVGWsGOV2kilxlK4LXaqoQS&gclid=Cj0KCQjwjo7DBhCrARIsACWauSnJsNc386Lbl1RZmmMh-aEy2L8nCAfpPUYiYMZNbKw4HcyQOJ9ZfjAaAkoAEALw_wcB"
-                                target="_blank" rel="noopener noreferrer" class="work-box">
-
-                                <div class="work-date">Aug 2020 – Dec 2021<br>Nigeria (Remote)</div>
-                                <div class="work-description-container">
-
-                                    <div class="work-description">
-                                        <h1>Software Engineering Intern • Andela / Paystack <span
-                                                class="link-indicator">↗</span></h1>
-                                        <p>
-                                            Built an internal analytics dashboard with React and Node.js to visualize
-                                            engineering performance metrics and improve team visibility. Refactored
-                                            legacy Python modules for 20% better efficiency and added Jest/Mocha test
-                                            coverage that reduced manual QA time by 30%.
-                                        </p>
-                                    </div>
-                                    <div class="work-tools-container">
-                                        <div class="tools">React</div>
-                                        <div class="tools">Node.js</div>
-                                        <div class="tools">Python</div>
-                                        <div class="tools">Jest</div>
-                                        <div class="tools">Mocha</div>
-                                        <div class="tools">REST API</div>
-                                    </div>
-
-                                </div>
-
-                            </a>
                         </div> <!--end of work-box-container-->
-
-
-
-                        <!--Portfolio Section-->
-                        <h1 class="section-heading scroll-offset" id="portfolio">Projects</h1>
-
-                        <a href="./pages/projectArchive.html" class="action-links">View Full Project Archive <span
-                                class="link-indicator-right">→</span></a>
-
-                        <div class="work-box-container">
-
-                            <!-- Project -->
-                            <a href="https://nabxz.github.io/portfolio-website/Portfolio-PROJECTS/Galaxy/" target="_blank"
-                                rel="noopener noreferrer" class="work-box">
-
-                                <div class="work-date">
-                                    <img src="./assets/images/website-Galaxy/homepage.webp" alt="Galaxy preview">
-                                </div>
-
-                                <div class="work-description-container">
-
-                                    <div class="project-description">
-                                        <h1>Galaxy <span class="link-indicator">↗</span></h1>
-                                        <p>
-                                            Full-stack space exploration platform using real-time NASA and Pixabay APIs
-                                            for live space imagery, Earth data, articles, missions, and authenticated
-                                            saved content. Built with <strong>JavaScript, Node.js, SQL, Bcrypt, and
-                                                express-session</strong>.
-                                        </p>
-                                    </div>
-
-                                    <div class="project-action-buttons">
-                                        <button
-                                            onclick="event.preventDefault(); event.stopPropagation(); window.open('https://github.com/Nabxz/GalaxyWebsite', '_blank');">
-                                            Github<span class="button-link-indicator">↗</span>
-                                        </button>
-                                        <button
-                                            onclick="event.preventDefault(); event.stopPropagation(); window.open('https://nabxz.github.io/portfolio-website/Portfolio-PROJECTS/Galaxy/', '_blank');">
-                                            Static Demo<span class="button-link-indicator">↗</span>
-                                        </button>
-                                        <button type="button"
-                                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='./pages/moreInfo-Galaxy.html';">
-                                            More Info <span class="button-link-indicator">↗</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="work-tools-container">
-                                        <div class="tools-green">JavaScript</div>
-                                        <div class="tools-green">Node.js</div>
-                                        <div class="tools-green">SQL</div>
-                                        <div class="tools-green">API Integration</div>
-                                        <div class="tools-green">Bcrypt</div>
-                                        <div class="tools-green">Real-Time Data</div>
-                                    </div>
-
-                                </div>
-                            </a>
-
-                            <!-- Project -->
-                            <a href="./pages/moreInfo-AquaEssence.html" class="work-box">
-
-                                <div class="work-date">
-                                    <p>Aqua Essence<br>Real Client Project</p>
-                                </div>
-
-                                <div class="work-description-container">
-
-                                    <div class="project-description">
-                                        <h1>Aqua Essence <span class="link-indicator">↗</span></h1>
-                                        <p>
-                                            Real-client scheduling and matching system for swim instruction operations.
-                                            Combined <strong>FastAPI (Python)</strong> with <strong>C++17</strong>
-                                            matching logic to assign about 1,800 swimmers per week under availability,
-                                            capacity, skill-level, and operational constraints.
-                                        </p>
-                                    </div>
-
-                                    <div class="project-action-buttons">
-                                        <button type="button"
-                                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='./pages/moreInfo-AquaEssence.html';">
-                                            More Info <span class="button-link-indicator">↗</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="work-tools-container">
-                                        <div class="tools-green">Python</div>
-                                        <div class="tools-green">FastAPI</div>
-                                        <div class="tools-green">C++17</div>
-                                        <div class="tools-green">HTTP/JSON APIs</div>
-                                        <div class="tools-green">Constraint Matching</div>
-                                        <div class="tools-green">Offline Desktop Host</div>
-                                    </div>
-
-                                </div>
-                            </a>
-
-                            <!-- Project -->
-                            <a href="https://github.com/Nabxz/PhysiciansConnect" target="_blank"
-                                rel="noopener noreferrer" class="work-box">
-
-                                <div class="work-date">
-                                    <img src="./assets/images/project-PhysicianConnect/homepage.webp"
-                                        alt="PhysiciansConnect preview">
-                                </div>
-
-                                <div class="work-description-container">
-
-                                    <div class="project-description">
-                                        <h1>PhysiciansConnect <span class="link-indicator">↗</span></h1>
-                                        <p>
-                                            Healthcare coordination platform for physicians and receptionists with
-                                            scheduling, patient history, prescriptions, referrals, messaging, and
-                                            billing. Built with a <strong>3-tier Java architecture</strong> and
-                                            database persistence to keep domain logic organized, testable, and
-                                            maintainable.
-                                        </p>
-                                    </div>
-
-                                    <div class="project-action-buttons">
-                                        <button
-                                            onclick="window.open('https://github.com/Nabxz/PhysiciansConnect', '_blank');">
-                                            Github<span class="button-link-indicator">↗</span>
-                                        </button>
-                                        <button
-                                            onclick="window.open('https://nabxz.github.io/PhysicianConnectWebsite/', '_blank');">
-                                            Website Presentation<span class="button-link-indicator">↗</span>
-                                        </button>
-                                        <button type="button"
-                                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='./pages/moreInfo-PhysiciansConnect.html';">
-                                            More Info <span class="button-link-indicator">↗</span>
-                                        </button>
-                                    </div>
-
-                                    <div class="work-tools-container">
-                                        <div class="tools-green">Java</div>
-                                        <div class="tools-green">SQL</div>
-                                        <div class="tools-green">3-Tier Architecture</div>
-                                        <div class="tools-green">Scheduling</div>
-                                        <div class="tools-green">Messaging</div>
-                                        <div class="tools-green">Notifications</div>
-                                        <div class="tools-green">Billing & Invoicing</div>
-                                    </div>
-
-                                </div>
-                            </a>
-
-                        </div> <!-- end of work-box-container -->
 
 
                         <!--Skills Section-->
