@@ -66,49 +66,27 @@
 
         <h1>PhysiciansConnect</h1>
         <p>
-            PhysiciansConnect is a healthcare coordination platform for physicians and receptionists. It streamlines
-            <b>appointment scheduling</b>, <b>patient history access</b>, <b>prescriptions</b>, <b>referrals</b>,
-            <b>billing & invoicing</b>, and internal <b>messaging</b>. Built in Java with a
-            <b>3-tier architecture</b> (UI, services, persistence) on an embedded <b>SQLite</b> database to ensure
-            modularity, scalability, and ease of testing. Desktop UI powered by <b>Swing</b>, with comprehensive
-            <b>JUnit 5</b> coverage and production-ready Gradle configuration.
+            Built a healthcare desktop app with Java 21, Swing, SQLite, JUnit 5, and Gradle. It includes different
+            storage options, profile management, and tests for the main features.
         </p>
 
         <div class="key-features">
-            <h2>Key Features And Workflows</h2>
+            <h2>Main Features</h2>
             <ul>
                 <li>
-                    <b>Appointment Slot Management:</b>
-                    Create, update, and remove physician availability; handle booking conflicts and notifications.
+                    <b>Storage Options:</b>
+                    Built SQLite and in-memory storage with Java interfaces so the app can switch between them without
+                    changing the main code.
                 </li>
                 <li>
-                    <b>Patient Records & History:</b>
-                    View visit summaries, exam details, and longitudinal timelines for informed decision-making.
+                    <b>Profile Management:</b>
+                    Added profiles for physicians and receptionists with Swing and SQLite, including photo uploads and
+                    resizing.
                 </li>
                 <li>
-                    <b>Prescriptions:</b>
-                    Search formulary, add dosage and notes, and record prescription history per patient.
-                </li>
-                <li>
-                    <b>Billing & Insurance:</b>
-                    Generate invoices, track payments, and apply insurance adjustments with auditability.
-                </li>
-                <li>
-                    <b>Referrals & Messaging:</b>
-                    Create/track referrals to specialists and use an internal messaging system for team coordination.
-                </li>
-                <li>
-                    <b>Notifications:</b>
-                    Real-time UI alerts for appointment updates, new messages, and billing events.
-                </li>
-                <li>
-                    <b>Profile & Photos:</b>
-                    Local profile photo storage for physicians/receptionists with automatic resizing (200×200).
-                </li>
-                <li>
-                    <b>Architecture:</b>
-                    Clear separation of concerns—Presentation (Swing), Business Logic (managers/services), Persistence
-                    (SQLite JDBC). Swap persistence implementations without touching UI/logic.
+                    <b>Tests:</b>
+                    Wrote JUnit 5 tests with in-memory SQLite to check appointments, prescriptions, referrals, and
+                    messages.
                 </li>
             </ul>
         </div>
@@ -122,18 +100,13 @@
         </div>
 
         <div class="project-tags-container">
-            <div class="project-tag">Java</div>
+            <div class="project-tag">Java 21</div>
             <div class="project-tag">Gradle</div>
-            <div class="project-tag">SQLite (JDBC)</div>
+            <div class="project-tag">SQLite</div>
             <div class="project-tag">Swing</div>
-            <div class="project-tag">3-Tier Architecture</div>
-            <div class="project-tag">Domain-Driven Design</div>
-            <div class="project-tag">JUnit 5 Testing</div>
-            <div class="project-tag">Notifications</div>
-            <div class="project-tag">Billing & Invoicing</div>
-            <div class="project-tag">Insurance Adjustments</div>
-            <div class="project-tag">Messaging</div>
-            <div class="project-tag">Profile Photos</div>
+            <div class="project-tag">JUnit 5</div>
+            <div class="project-tag">In-Memory Storage</div>
+            <div class="project-tag">Profile Management</div>
         </div>
 
         <hr>

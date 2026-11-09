@@ -65,42 +65,41 @@
 
         <h1>Pipeline CPU Simulator (with Branch Prediction)</h1>
         <p>
-            A C++ simulator of a pipelined CPU implementing six modeled stages
-            (<b>IF</b>, <b>ID</b>, <b>EA</b>, <b>OF</b>, <b>EX</b>, <b>WB</b>) with
-            <b>hazard detection</b>, <b>operand forwarding</b>, and stall insertion. Includes
-            <b>static branch prediction</b> (code-pattern: backward branches as taken) vs. no prediction,
-            plus robust exception handling for illegal opcodes/addresses and infinite loop detection.
-            Produces branch prediction accuracy reports and memory/register diagnostics.
-            (Assembler provided by instructor; I implemented the simulator & pipeline logic.)
+            Built a C++ simulator for a CPU pipeline with six stages: <b>IF</b>, <b>ID</b>, <b>EA</b>, <b>OF</b>,
+            <b>EX</b>, and <b>WB</b>. It finds hazards, forwards data, adds stalls when needed, and compares static branch
+            prediction with no prediction. It also catches illegal instructions and addresses, stops infinite loops,
+            and reports branch accuracy, memory, and register values. My instructor provided the assembler, and I built
+            the simulator and pipeline logic.
         </p>
 
         <div class="key-features">
-            <h2>Key Features And Functionalities</h2>
+            <h2>Main Features</h2>
             <ul>
                 <li>
                     <b>Pipeline Stages:</b>
-                    IF (fetch), ID (decode), EA (effective address), OF (operand fetch),
-                    EX (execute), WB (write-back) with per-stage latches.
+                    Uses IF for fetch, ID for decode, EA for the address, OF for operands, EX to run the instruction,
+                    and WB to write the result, with a latch for each stage.
                 </li>
                 <li>
-                    <b>Hazard Handling:</b>
-                    RAW detection, targeted stalls, and <b>forwarding</b> to reduce bubbles.
+                    <b>Handling Hazards:</b>
+                    Finds RAW hazards, adds stalls only when needed, and forwards data to reduce waiting.
                 </li>
                 <li>
                     <b>Branch Prediction:</b>
-                    Static code-pattern predictor (backward=taken) vs. no prediction; reports accuracy and penalties.
+                    Treats backward branches as taken, compares the results with no prediction, and reports the accuracy
+                    and cost of wrong predictions.
                 </li>
                 <li>
-                    <b>Exceptions & Robustness:</b>
-                    Illegal opcode/address traps and <b>infinite loop</b> guard via branch limit.
+                    <b>Errors And Infinite Loops:</b>
+                    Catches illegal opcodes and addresses, and uses a branch limit to stop infinite loops.
                 </li>
                 <li>
-                    <b>Diagnostics:</b>
-                    Memory dumps with ASCII translation, register file snapshots, and pipeline state tracing.
+                    <b>Debug Information:</b>
+                    Shows memory with ASCII text, register values, and the state of each pipeline stage.
                 </li>
                 <li>
-                    <b>Build & Run:</b>
-                    <code>make</code> to build; run with
+                    <b>Build And Run:</b>
+                    Use <code>make</code> to build it, then run it with
                     <code>./pipeline_sim program.code program.data</code>.
                 </li>
             </ul>
@@ -120,7 +119,7 @@
             <div class="project-tag">Operand Forwarding</div>
             <div class="project-tag">Pipeline Stalls</div>
             <div class="project-tag">Exception Handling</div>
-            <div class="project-tag">Diagnostics & Reports</div>
+            <div class="project-tag">Debug Reports</div>
             <div class="project-tag">Makefile</div>
         </div>
 

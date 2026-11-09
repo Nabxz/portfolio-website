@@ -66,43 +66,41 @@
 
         <h1>MPI Alarm Monitor</h1>
         <p>
-            A parallel C application using <b>MPI</b> to distribute a fixed set of alarms across worker ranks,
-            compute a severity score per alarm in parallel, and aggregate totals on the manager (rank 0).
-            Demonstrates <b>block data decomposition</b>, point-to-point messaging with
-            <code>MPI_Send</code>/<code>MPI_Recv</code>, and deterministic aggregation on the root process.
-            Built to practice distributed design, workload partitioning, and correctness under concurrency.
+            Built a parallel C program with <b>MPI</b> that splits a set of alarms between worker processes. Each worker
+            gives its alarms a severity score and sends the results to the manager process at rank 0, which adds the
+            totals together. The project uses block decomposition and <code>MPI_Send</code>/<code>MPI_Recv</code> to
+            practice splitting work and sharing data between processes.
         </p>
 
         <div class="key-features">
-            <h2>Key Features And Functionalities</h2>
+            <h2>Main Features</h2>
             <ul>
                 <li>
-                    <b>Parallel Workload Partitioning:</b>
-                    Evenly divides alarms among ranks using block decomposition to maximize utilization and minimize
-                    stragglers.
+                    <b>Splitting The Work:</b>
+                    Uses block decomposition to divide the alarms as evenly as possible between the worker processes.
                 </li>
                 <li>
-                    <b>Message Passing (P2P):</b>
-                    Uses <code>MPI_Send</code>/<code>MPI_Recv</code> for explicit data movement and result collection;
-                    rank 0 orchestrates distribution and gathers partial sums.
+                    <b>Sending Data:</b>
+                    Uses <code>MPI_Send</code> and <code>MPI_Recv</code> to move data between processes while rank 0 sends
+                    out the work and collects each result.
                 </li>
                 <li>
-                    <b>Rank/Size Awareness:</b>
-                    Robust handling of edge cases (e.g., fewer alarms than ranks) and non-uniform partitions.
+                    <b>Different Process Counts:</b>
+                    Handles uneven splits and cases where there are fewer alarms than worker processes.
                 </li>
                 <li>
-                    <b>Aggregation & Reduction:</b>
-                    Manager process computes global totals and severity distribution; logs per-rank contributions for
-                    verification and debugging.
+                    <b>Final Results:</b>
+                    Rank 0 calculates the total scores and severity counts, and logs what each worker added so the
+                    results can be checked.
                 </li>
                 <li>
-                    <b>Deterministic Runs:</b>
-                    Optional seeded RNG for reproducible severity generation during testing.
+                    <b>Repeatable Tests:</b>
+                    Can use a fixed random seed to generate the same severity scores during testing.
                 </li>
                 <li>
-                    <b>Portable Build:</b>
-                    Standard <code>mpicc</code>/<code>mpirun</code> workflow; runs on local multi-core or cluster
-                    environments with OpenMPI/MPICH.
+                    <b>Build And Run:</b>
+                    Uses <code>mpicc</code> and <code>mpirun</code>, and works on a local multi-core computer or a cluster
+                    with OpenMPI or MPICH.
                 </li>
             </ul>
         </div>
@@ -121,9 +119,9 @@
             <div class="project-tag">Parallel Programming</div>
             <div class="project-tag">Block Decomposition</div>
             <div class="project-tag">Point-to-Point Messaging</div>
-            <div class="project-tag">Root Aggregation</div>
+            <div class="project-tag">Rank 0 Totals</div>
             <div class="project-tag">OpenMPI / MPICH</div>
-            <div class="project-tag">Reproducible Runs</div>
+            <div class="project-tag">Repeatable Tests</div>
         </div>
 
         <hr>

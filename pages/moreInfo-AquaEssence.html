@@ -65,52 +65,37 @@
 
         <h1>Aqua Essence</h1>
         <p>
-            Aqua Essence is a real-client scheduling and matching project built for swim instruction operations. The
-            system combines a FastAPI service layer in Python with C++17 matching logic to assign about 1,800 swimmers
-            per week to instructors while respecting real-world constraints such as availability, capacity, skill level,
-            and operational rules.
+            Worked with a real client for four months to build a system that matches swim instructors with students for
+            a program with around 1,800 swimmers a week.
         </p>
 
         <div class="key-features">
-            <h2>Key Features And Functionalities</h2>
+            <h2>Main Features</h2>
             <ul>
                 <li>
-                    <b>Constraint-Based Matching:</b>
-                    Designed matching logic to place swimmers with instructors under competing scheduling, capacity,
-                    and skill constraints.
+                    <b>Working With The Client:</b>
+                    Worked with my team and the client to understand what the schedule needed and made changes based on
+                    their feedback.
                 </li>
                 <li>
-                    <b>FastAPI Service Layer:</b>
-                    Built Python API workflows to coordinate matching requests, inputs, and responses through a
-                    structured service boundary.
+                    <b>Matching Students:</b>
+                    Updated the system to keep existing classes and instructor relationships, then used OR-Tools CP-SAT
+                    to match the students who were left.
                 </li>
                 <li>
-                    <b>Offline Desktop Host:</b>
-                    Built a C++ desktop host/server for offline matching so the browser-based UI could keep operating
-                    through local HTTP/JSON endpoints.
-                </li>
-                <li>
-                    <b>Local API Surface:</b>
-                    Exposed 20+ local HTTP/JSON endpoints to power the UI, manage matching data, and keep the system
-                    usable without relying on a cloud backend.
-                </li>
-                <li>
-                    <b>Client-Focused Delivery:</b>
-                    Prioritized reliability, clear outputs, and workflow fit so the system could support a real
-                    scheduling process instead of only demonstrating a technical prototype.
+                    <b>Testing The Algorithms:</b>
+                    Built a tool that tests the matching algorithms with larger datasets and compares their speed and
+                    results.
                 </li>
             </ul>
         </div>
 
         <div class="project-tags-container">
             <div class="project-tag">Real Client Project</div>
-            <div class="project-tag">Python</div>
-            <div class="project-tag">FastAPI</div>
-            <div class="project-tag">C++17</div>
-            <div class="project-tag">Constraint-Based Matching</div>
-            <div class="project-tag">HTTP/JSON APIs</div>
-            <div class="project-tag">Offline Desktop Host</div>
-            <div class="project-tag">Scheduling Systems</div>
+            <div class="project-tag">OR-Tools CP-SAT</div>
+            <div class="project-tag">Matching Algorithms</div>
+            <div class="project-tag">Benchmarking</div>
+            <div class="project-tag">Client Collaboration</div>
         </div>
 
         <hr>
